@@ -1,5 +1,9 @@
 package crimson_twilight.immersive_cooking;
 
+import crimson_twilight.immersive_cooking.registry.*;
+import crimson_twilight.immersive_cooking.setup.ClientEventHandler;
+import crimson_twilight.immersive_cooking.setup.CommonEventHandler;
+import crimson_twilight.immersive_cooking.setup.Configuration;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,13 +37,8 @@ public class ImmersiveCooking
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Configuration.COMMON_CONFIG);
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Configuration.CLIENT_CONFIG);
 
-        ModParticleTypes.PARTICLE_TYPES.register(modEventBus);
-        ModEnchantments.ENCHANTMENTS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
-        ModEffects.EFFECTS.register(modEventBus);
-        ModBiomeFeatures.FEATURES.register(modEventBus);
-        ModSounds.SOUNDS.register(modEventBus);
         ModTileEntityTypes.TILES.register(modEventBus);
         ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
         ModRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
@@ -47,7 +46,7 @@ public class ImmersiveCooking
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void registerRecipeSerializers(RegistryEvent.Register<IRecipeSerializer<?>> event) {
-        CraftingHelper.register(new ResourceLocation(MODID, "tool"), ToolIngredient.SERIALIZER);
+    private void registerRecipeSerializers(RegistryEvent.Register<IRecipeSerializer<?>> event)
+    {
     }
 }

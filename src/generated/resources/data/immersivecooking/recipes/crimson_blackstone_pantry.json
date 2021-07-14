@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "P"
+  ],
+  "key": {
+    "C": {
+      "item": "immersivecooking:blackstone_countertop"
+    },
+    "P": {
+      "item": "farmersdelight:crimson_pantry"
+    }
+  },
+  "result": {
+    "item": "immersivecooking:crimson_blackstone_pantry"
+  }
+}

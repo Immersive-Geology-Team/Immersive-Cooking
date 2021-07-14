@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "P"
+  ],
+  "key": {
+    "C": {
+      "item": "immersivecooking:stone_countertop"
+    },
+    "P": {
+      "item": "farmersdelight:birch_pantry"
+    }
+  },
+  "result": {
+    "item": "immersivecooking:birch_stone_pantry"
+  }
+}

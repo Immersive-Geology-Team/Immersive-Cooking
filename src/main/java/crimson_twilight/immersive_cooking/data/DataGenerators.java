@@ -16,7 +16,7 @@ public class DataGenerators
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper helper = event.getExistingFileHelper();
         if (event.includeServer()) {
-            //generator.addProvider(new Recipes(generator));
+            generator.addProvider(new Recipes(generator));
         }
         if (event.includeClient()) {
             BlockStates blockStates = new BlockStates(generator, helper);

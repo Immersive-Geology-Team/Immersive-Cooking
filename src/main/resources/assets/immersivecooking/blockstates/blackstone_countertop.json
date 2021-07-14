@@ -1,0 +1,8 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "": {
+      "model": "immersivecooking:block/blackstone_countertop"
+    }
+  }
+}

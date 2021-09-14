@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "immersivecooking:smoked_spider_shank"
+    ]
+  },
+  "criteria": {
+    "has_monster_meat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "immersivecooking:raw_spider_shank"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "immersivecooking:smoked_spider_shank"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_monster_meat",
+      "has_the_recipe"
+    ]
+  ]
+}

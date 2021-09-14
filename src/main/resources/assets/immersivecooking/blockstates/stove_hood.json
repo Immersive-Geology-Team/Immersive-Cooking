@@ -1,0 +1,20 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "facing=north": {
+      "model": "immersivecooking:block/stove_hood"
+    },
+    "facing=south": {
+      "model": "immersivecooking:block/stove_hood",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "immersivecooking:block/stove_hood",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "immersivecooking:block/stove_hood",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "P"
+  ],
+  "key": {
+    "C": {
+      "item": "immersivecooking:granite_countertop"
+    },
+    "P": {
+      "item": "farmersdelight:warped_pantry"
+    }
+  },
+  "result": {
+    "item": "immersivecooking:warped_granite_pantry"
+  }
+}

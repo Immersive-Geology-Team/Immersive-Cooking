@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TTT",
+    "THT",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "minecraft:terracotta"
+    },
+    "H": {
+      "item": "minecraft:honeycomb"
+    }
+  },
+  "result": {
+    "item": "immersivecooking:glazed_tiles",
+    "count": 8
+  }
+}

@@ -44,6 +44,30 @@ public class BlockStates extends BlockStateProvider
         this.pantryBlock(ModBlocks.DARK_OAK_BLACKSTONE_PANTRY.get(), "dark_oak", "blackstone");
         this.pantryBlock(ModBlocks.CRIMSON_BLACKSTONE_PANTRY.get(), "crimson", "blackstone");
         this.pantryBlock(ModBlocks.WARPED_BLACKSTONE_PANTRY.get(), "warped", "blackstone");
+        this.pantryBlock(ModBlocks.OAK_ANDESITE_PANTRY.get(), "oak", "andesite");
+        this.pantryBlock(ModBlocks.BIRCH_ANDESITE_PANTRY.get(), "birch", "andesite");
+        this.pantryBlock(ModBlocks.SPRUCE_ANDESITE_PANTRY.get(), "spruce", "andesite");
+        this.pantryBlock(ModBlocks.JUNGLE_ANDESITE_PANTRY.get(), "jungle", "andesite");
+        this.pantryBlock(ModBlocks.ACACIA_ANDESITE_PANTRY.get(), "acacia", "andesite");
+        this.pantryBlock(ModBlocks.DARK_OAK_ANDESITE_PANTRY.get(), "dark_oak", "andesite");
+        this.pantryBlock(ModBlocks.CRIMSON_ANDESITE_PANTRY.get(), "crimson", "andesite");
+        this.pantryBlock(ModBlocks.WARPED_ANDESITE_PANTRY.get(), "warped", "andesite");
+        this.pantryBlock(ModBlocks.OAK_DIORITE_PANTRY.get(), "oak", "diorite");
+        this.pantryBlock(ModBlocks.BIRCH_DIORITE_PANTRY.get(), "birch", "diorite");
+        this.pantryBlock(ModBlocks.SPRUCE_DIORITE_PANTRY.get(), "spruce", "diorite");
+        this.pantryBlock(ModBlocks.JUNGLE_DIORITE_PANTRY.get(), "jungle", "diorite");
+        this.pantryBlock(ModBlocks.ACACIA_DIORITE_PANTRY.get(), "acacia", "diorite");
+        this.pantryBlock(ModBlocks.DARK_OAK_DIORITE_PANTRY.get(), "dark_oak", "diorite");
+        this.pantryBlock(ModBlocks.CRIMSON_DIORITE_PANTRY.get(), "crimson", "diorite");
+        this.pantryBlock(ModBlocks.WARPED_DIORITE_PANTRY.get(), "warped", "diorite");
+        this.pantryBlock(ModBlocks.OAK_GRANITE_PANTRY.get(), "oak", "granite");
+        this.pantryBlock(ModBlocks.BIRCH_GRANITE_PANTRY.get(), "birch", "granite");
+        this.pantryBlock(ModBlocks.SPRUCE_GRANITE_PANTRY.get(), "spruce", "granite");
+        this.pantryBlock(ModBlocks.JUNGLE_GRANITE_PANTRY.get(), "jungle", "granite");
+        this.pantryBlock(ModBlocks.ACACIA_GRANITE_PANTRY.get(), "acacia", "granite");
+        this.pantryBlock(ModBlocks.DARK_OAK_GRANITE_PANTRY.get(), "dark_oak", "granite");
+        this.pantryBlock(ModBlocks.CRIMSON_GRANITE_PANTRY.get(), "crimson", "granite");
+        this.pantryBlock(ModBlocks.WARPED_GRANITE_PANTRY.get(), "warped", "granite");
     }
 
     public void pantryBlock(Block block, String woodType, String stoneType) {

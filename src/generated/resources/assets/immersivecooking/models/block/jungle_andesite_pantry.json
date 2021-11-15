@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "side": "immersivecooking:block/jungle_andesite_pantry_side",
+    "front": "immersivecooking:block/jungle_andesite_pantry_front",
+    "bottom": "immersivecooking:block/jungle_pantry_bottom",
+    "top": "immersivecooking:block/andesite_countertop"
+  }
+}

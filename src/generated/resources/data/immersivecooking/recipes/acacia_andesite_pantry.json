@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "P"
+  ],
+  "key": {
+    "C": {
+      "item": "immersivecooking:andesite_countertop"
+    },
+    "P": {
+      "item": "farmersdelight:acacia_pantry"
+    }
+  },
+  "result": {
+    "item": "immersivecooking:acacia_andesite_pantry"
+  }
+}

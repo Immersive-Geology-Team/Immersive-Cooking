@@ -48,7 +48,7 @@ public class CounterTop extends HorizontalBlock
     @Override
     public BlockState getStateForPlacement(BlockItemUseContext p_196258_1_) {
         BlockState lvt_7_1_ = this.defaultBlockState();
-        if (lvt_7_1_.canSurvive(p_196258_1_.getLevel(), p_196258_1_.getClickedPos())) {
+        if (this.canSurvive(lvt_7_1_, p_196258_1_.getLevel(), p_196258_1_.getClickedPos())) {
             return lvt_7_1_;
         }
         return null;

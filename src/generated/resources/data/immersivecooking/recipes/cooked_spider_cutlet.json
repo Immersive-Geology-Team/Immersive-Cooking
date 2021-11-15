@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "immersivecooking:raw_spider_cutlet"
+  },
+  "result": "immersivecooking:cooked_spider_cutlet",
+  "experience": 0.35,
+  "cookingtime": 200
+}

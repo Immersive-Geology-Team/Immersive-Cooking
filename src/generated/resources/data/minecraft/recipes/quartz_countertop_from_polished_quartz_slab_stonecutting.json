@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:quartz_slab"
+  },
+  "result": "immersivecooking:quartz_countertop",
+  "count": 2
+}

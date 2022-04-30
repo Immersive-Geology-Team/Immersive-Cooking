@@ -1,9 +1,9 @@
 {
   "parent": "minecraft:block/orientable_with_bottom",
   "textures": {
-    "side": "immersivecooking:block/jungle_blackstone_pantry_side",
+    "side": "immersivecooking:block/jungle_blackstone_counter_side",
     "front": "immersivecooking:block/jungle_blackstone_pantry_front",
-    "bottom": "immersivecooking:block/jungle_pantry_bottom",
+    "bottom": "immersivecooking:block/jungle_counter_bottom",
     "top": "immersivecooking:block/blackstone_countertop"
   }
 }

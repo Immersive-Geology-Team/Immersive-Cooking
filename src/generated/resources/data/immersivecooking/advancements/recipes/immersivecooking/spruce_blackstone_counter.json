@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "immersivecooking:spruce_blackstone_counter"
+    ]
+  },
+  "criteria": {
+    "has_polished_blackstone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:polished_blackstone"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "immersivecooking:spruce_blackstone_counter"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_blackstone",
+      "has_the_recipe"
+    ]
+  ]
+}

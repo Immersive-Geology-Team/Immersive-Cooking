@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "immersivecooking:block/acacia_diorite_counter"
+    },
+    "facing=south": {
+      "model": "immersivecooking:block/acacia_diorite_counter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "immersivecooking:block/acacia_diorite_counter",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "immersivecooking:block/acacia_diorite_counter",
+      "y": 90
+    }
+  }
+}

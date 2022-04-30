@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "immersivecooking:warped_andesite_counter"
+    ]
+  },
+  "criteria": {
+    "has_polished_andesite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:polished_andesite"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "immersivecooking:warped_andesite_counter"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_andesite",
+      "has_the_recipe"
+    ]
+  ]
+}

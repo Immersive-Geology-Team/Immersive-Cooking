@@ -1,9 +1,9 @@
 {
   "parent": "minecraft:block/orientable_with_bottom",
   "textures": {
-    "side": "immersivecooking:block/spruce_stone_pantry_side",
+    "side": "immersivecooking:block/spruce_stone_counter_side",
     "front": "immersivecooking:block/spruce_stone_pantry_front_open",
-    "bottom": "immersivecooking:block/spruce_pantry_bottom",
+    "bottom": "immersivecooking:block/spruce_counter_bottom",
     "top": "immersivecooking:block/stone_countertop"
   }
 }

@@ -24,5 +24,6 @@
     "item": "immersivecooking:pyttipanna",
     "count": 2
   },
-  "cookingtime": 200
+  "experience": 0.35,
+  "cookingtime": 100
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "immersivecooking:block/jungle_quartz_counter"
+    },
+    "facing=south": {
+      "model": "immersivecooking:block/jungle_quartz_counter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "immersivecooking:block/jungle_quartz_counter",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "immersivecooking:block/jungle_quartz_counter",
+      "y": 90
+    }
+  }
+}

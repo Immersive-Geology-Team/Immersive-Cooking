@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "P"
+  ],
+  "key": {
+    "C": {
+      "item": "immersivecooking:diorite_countertop"
+    },
+    "P": {
+      "item": "minecraft:nether_bricks"
+    }
+  },
+  "result": {
+    "item": "immersivecooking:nether_brick_diorite_counter"
+  }
+}

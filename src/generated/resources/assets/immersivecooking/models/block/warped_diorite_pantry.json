@@ -1,9 +1,9 @@
 {
   "parent": "minecraft:block/orientable_with_bottom",
   "textures": {
-    "side": "immersivecooking:block/warped_diorite_pantry_side",
+    "side": "immersivecooking:block/warped_diorite_counter_side",
     "front": "immersivecooking:block/warped_diorite_pantry_front",
-    "bottom": "immersivecooking:block/warped_pantry_bottom",
+    "bottom": "immersivecooking:block/warped_counter_bottom",
     "top": "immersivecooking:block/diorite_countertop"
   }
 }

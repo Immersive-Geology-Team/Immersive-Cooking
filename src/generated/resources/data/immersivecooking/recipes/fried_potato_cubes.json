@@ -1,7 +1,7 @@
 {
   "type": "minecraft:campfire_cooking",
   "ingredient": {
-    "item": "immersivecooking:potato_slice"
+    "item": "immersivecooking:potato_cubes"
   },
   "result": "immersivecooking:fried_potato_cubes",
   "experience": 0.35,

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "P"
+  ],
+  "key": {
+    "C": {
+      "item": "immersivecooking:quartz_countertop"
+    },
+    "P": {
+      "item": "farmersdelight:oak_pantry"
+    }
+  },
+  "result": {
+    "item": "immersivecooking:oak_quartz_pantry"
+  }
+}

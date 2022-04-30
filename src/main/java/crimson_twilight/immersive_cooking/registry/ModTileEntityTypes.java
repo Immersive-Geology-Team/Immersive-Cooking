@@ -17,17 +17,20 @@ public class ModTileEntityTypes
             () -> TileEntityType.Builder.of(PantryCounterTileEntity::new, new Block[]{
                     ModBlocks.OAK_STONE_PANTRY.get(), ModBlocks.BIRCH_STONE_PANTRY.get(), ModBlocks.SPRUCE_STONE_PANTRY.get(),
                     ModBlocks.JUNGLE_STONE_PANTRY.get(), ModBlocks.ACACIA_STONE_PANTRY.get(), ModBlocks.DARK_OAK_STONE_PANTRY.get(),
-                    ModBlocks.SPRUCE_STONE_PANTRY.get(), ModBlocks.CRIMSON_STONE_PANTRY.get(), ModBlocks.WARPED_STONE_PANTRY.get(),
+                    ModBlocks.CRIMSON_STONE_PANTRY.get(), ModBlocks.WARPED_STONE_PANTRY.get(),
                     ModBlocks.OAK_BLACKSTONE_PANTRY.get(), ModBlocks.BIRCH_BLACKSTONE_PANTRY.get(), ModBlocks.SPRUCE_BLACKSTONE_PANTRY.get(),
                     ModBlocks.JUNGLE_BLACKSTONE_PANTRY.get(), ModBlocks.ACACIA_BLACKSTONE_PANTRY.get(), ModBlocks.DARK_OAK_BLACKSTONE_PANTRY.get(),
-                    ModBlocks.SPRUCE_BLACKSTONE_PANTRY.get(), ModBlocks.CRIMSON_BLACKSTONE_PANTRY.get(), ModBlocks.WARPED_BLACKSTONE_PANTRY.get(),
+                    ModBlocks.CRIMSON_BLACKSTONE_PANTRY.get(), ModBlocks.WARPED_BLACKSTONE_PANTRY.get(),
                     ModBlocks.OAK_ANDESITE_PANTRY.get(), ModBlocks.BIRCH_ANDESITE_PANTRY.get(), ModBlocks.SPRUCE_ANDESITE_PANTRY.get(),
                     ModBlocks.JUNGLE_ANDESITE_PANTRY.get(), ModBlocks.ACACIA_ANDESITE_PANTRY.get(), ModBlocks.DARK_OAK_ANDESITE_PANTRY.get(),
-                    ModBlocks.SPRUCE_ANDESITE_PANTRY.get(), ModBlocks.CRIMSON_ANDESITE_PANTRY.get(), ModBlocks.WARPED_ANDESITE_PANTRY.get(),
+                    ModBlocks.CRIMSON_ANDESITE_PANTRY.get(), ModBlocks.WARPED_ANDESITE_PANTRY.get(),
                     ModBlocks.OAK_DIORITE_PANTRY.get(), ModBlocks.BIRCH_DIORITE_PANTRY.get(), ModBlocks.SPRUCE_DIORITE_PANTRY.get(),
                     ModBlocks.JUNGLE_DIORITE_PANTRY.get(), ModBlocks.ACACIA_DIORITE_PANTRY.get(), ModBlocks.DARK_OAK_DIORITE_PANTRY.get(),
-                    ModBlocks.SPRUCE_DIORITE_PANTRY.get(), ModBlocks.CRIMSON_DIORITE_PANTRY.get(), ModBlocks.WARPED_DIORITE_PANTRY.get(),
+                    ModBlocks.CRIMSON_DIORITE_PANTRY.get(), ModBlocks.WARPED_DIORITE_PANTRY.get(),
                     ModBlocks.OAK_GRANITE_PANTRY.get(), ModBlocks.BIRCH_GRANITE_PANTRY.get(), ModBlocks.SPRUCE_GRANITE_PANTRY.get(),
                     ModBlocks.JUNGLE_GRANITE_PANTRY.get(), ModBlocks.ACACIA_GRANITE_PANTRY.get(), ModBlocks.DARK_OAK_GRANITE_PANTRY.get(),
-                    ModBlocks.SPRUCE_GRANITE_PANTRY.get(), ModBlocks.CRIMSON_GRANITE_PANTRY.get(), ModBlocks.WARPED_GRANITE_PANTRY.get()}).build(null));
+                    ModBlocks.CRIMSON_GRANITE_PANTRY.get(), ModBlocks.WARPED_GRANITE_PANTRY.get(),
+                    ModBlocks.OAK_QUARTZ_PANTRY.get(), ModBlocks.BIRCH_QUARTZ_PANTRY.get(), ModBlocks.SPRUCE_QUARTZ_PANTRY.get(),
+                    ModBlocks.JUNGLE_QUARTZ_PANTRY.get(), ModBlocks.ACACIA_QUARTZ_PANTRY.get(), ModBlocks.DARK_OAK_QUARTZ_PANTRY.get(),
+                    ModBlocks.CRIMSON_QUARTZ_PANTRY.get(), ModBlocks.WARPED_QUARTZ_PANTRY.get()}).build(null));
 }

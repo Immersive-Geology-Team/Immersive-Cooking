@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "P"
+  ],
+  "key": {
+    "C": {
+      "item": "immersivecooking:stone_countertop"
+    },
+    "P": {
+      "item": "minecraft:warped_planks"
+    }
+  },
+  "result": {
+    "item": "immersivecooking:warped_stone_counter"
+  }
+}

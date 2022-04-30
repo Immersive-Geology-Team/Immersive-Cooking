@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "immersivecooking:block/brick_diorite_counter_side",
+    "bottom": "immersivecooking:block/brick_counter_bottom",
+    "top": "immersivecooking:block/diorite_countertop"
+  }
+}

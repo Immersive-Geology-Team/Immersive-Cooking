@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "P"
+  ],
+  "key": {
+    "C": {
+      "item": "immersivecooking:granite_countertop"
+    },
+    "P": {
+      "item": "minecraft:bricks"
+    }
+  },
+  "result": {
+    "item": "immersivecooking:brick_granite_counter"
+  }
+}

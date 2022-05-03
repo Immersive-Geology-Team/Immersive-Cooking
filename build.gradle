@@ -19,7 +19,7 @@ mixin {
     add sourceSets.main, "immersivecooking.refmap.json"
 }
 
-version = '1.1.0'
+version = '1.1.1'
 group = 'crimson_twilight.immersive_cooking' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'immersivecooking'
 

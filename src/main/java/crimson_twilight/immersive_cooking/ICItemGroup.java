@@ -1,5 +1,6 @@
 package crimson_twilight.immersive_cooking;
 
+import crimson_twilight.immersive_cooking.registry.ModItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -16,6 +17,6 @@ public class ICItemGroup extends ItemGroup
     @Nonnull
     @Override
     public ItemStack makeIcon() {
-        return new ItemStack(Items.BAKED_POTATO);
+        return new ItemStack(ModItems.SMOKED_SPIDER_SHANK.get());
     }
 }

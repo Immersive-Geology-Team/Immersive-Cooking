@@ -268,14 +268,16 @@ public class ModItems
     // Items
     public static final RegistryObject<Item> RAW_SPIDER_SHANK = ITEMS.register("raw_spider_shank",
             () -> new Item(new Item.Properties().food(Foods.RAW_SPIDER_SHANK).tab(ImmersiveCooking.ITEM_GROUP)));
+    public static final RegistryObject<Item> CLEAN_SPIDER_SHANK = ITEMS.register("clean_spider_shank",
+            () -> new Item(new Item.Properties().food(Foods.CLEAN_SPIDER_SHANK).tab(ImmersiveCooking.ITEM_GROUP)));
     public static final RegistryObject<Item> DICED_ONION = ITEMS.register("diced_onion",
             () -> new Item(new Item.Properties().food(Foods.DICED_ONION).tab(ImmersiveCooking.ITEM_GROUP)));
     public static final RegistryObject<Item> POTATO_SLICE = ITEMS.register("potato_slice",
             () -> new Item(new Item.Properties().food(Foods.POTATO_SLICE).tab(ImmersiveCooking.ITEM_GROUP)));
     public static final RegistryObject<Item> POTATO_CUBES = ITEMS.register("potato_cubes",
             () -> new Item(new Item.Properties().food(Foods.POTATO_CUBES).tab(ImmersiveCooking.ITEM_GROUP)));
-    public static final RegistryObject<Item> BAMBOO_SLICES = ITEMS.register("bamboo_slices",
-            () -> new Item(new Item.Properties().food(Foods.BAMBOO_SLICES).tab(ImmersiveCooking.ITEM_GROUP)));
+    public static final RegistryObject<Item> BAMBOO_SLICE = ITEMS.register("bamboo_slice",
+            () -> new Item(new Item.Properties().food(Foods.BAMBOO_SLICE).tab(ImmersiveCooking.ITEM_GROUP)));
     public static final RegistryObject<Item> RAW_SPIDER_CUTLET = ITEMS.register("raw_spider_cutlet",
             () -> new Item(new Item.Properties().food(Foods.RAW_SPIDER_CUTLET).tab(ImmersiveCooking.ITEM_GROUP)));
     public static final RegistryObject<Item> FRIED_POTATO_SLICE = ITEMS.register("fried_potato_slice",
@@ -290,5 +292,8 @@ public class ModItems
             () -> new ConsumableItem(new Item.Properties().food(Foods.PYTTIPANNA).craftRemainder(Items.BOWL).tab(ImmersiveCooking.ITEM_GROUP)));
     public static final RegistryObject<Item> CURRY_BASE = ITEMS.register("curry_base",
             () -> new ConsumableItem(new Item.Properties().food(Foods.CURRY_BASE).craftRemainder(Items.BOWL).tab(ImmersiveCooking.ITEM_GROUP)));
+
+    public static final RegistryObject<Item> MONSTER_TUFT = ITEMS.register("monster_tuft",
+            () -> new Item(new Item.Properties().tab(ImmersiveCooking.ITEM_GROUP)));
 
 }

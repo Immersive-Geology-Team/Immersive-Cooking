@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures":{
+    "layer0": "immersivecooking:item/clean_spider_shank"
+  }
+}

@@ -6,15 +6,18 @@
     }
   ],
   "tool": {
-    "tag": "forge:tools/knives"
+    "item": "minecraft:shears"
   },
   "result": [
     {
-      "item": "immersivecooking:raw_spider_cutlet",
-      "count": 4
+      "item": "immersivecooking:clean_spider_shank"
     },
     {
-      "item": "minecraft:bone"
+      "item": "immersivecooking:monster_tuft"
+    },
+    {
+      "item": "immersivecooking:monster_tuft",
+      "chance": 0.65
     }
   ]
 }

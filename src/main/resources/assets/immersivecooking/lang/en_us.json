@@ -61,8 +61,8 @@
     "block.immersivecooking.warped_quartz_pantry": "Warped Quartz Drawer",
 
 
-    "block.immersivecooking.brick_quartz_counter": "Brick Stone Counter",
-    "block.immersivecooking.nether_brick_quartz_counter": "Nether Brick Stone Counter",
+    "block.immersivecooking.brick_stone_counter": "Brick Stone Counter",
+    "block.immersivecooking.nether_brick_stone_counter": "Nether Brick Stone Counter",
     "block.immersivecooking.acacia_stone_counter": "Acacia Stone Counter",
     "block.immersivecooking.birch_stone_counter": "Birch Stone Counter",
     "block.immersivecooking.crimson_stone_counter": "Crimson Stone Counter",
@@ -72,8 +72,8 @@
     "block.immersivecooking.spruce_stone_counter": "Spruce Stone Counter",
     "block.immersivecooking.warped_stone_counter": "Warped Stone Counter",
 
-    "block.immersivecooking.brick_quartz_counter": "Brick Blackstone Counter",
-    "block.immersivecooking.nether_brick_quartz_counter": "Nether Brick Blackstone Counter",
+    "block.immersivecooking.brick_blackstone_counter": "Brick Blackstone Counter",
+    "block.immersivecooking.nether_brick_blackstone_counter": "Nether Brick Blackstone Counter",
     "block.immersivecooking.acacia_blackstone_counter": "Acacia Blackstone Counter",
     "block.immersivecooking.birch_blackstone_counter": "Birch Blackstone Counter",
     "block.immersivecooking.crimson_blackstone_counter": "Crimson Blackstone Counter",
@@ -83,8 +83,8 @@
     "block.immersivecooking.spruce_blackstone_counter": "Spruce Blackstone Counter",
     "block.immersivecooking.warped_blackstone_counter": "Warped Blackstone Counter",
 
-    "block.immersivecooking.brick_quartz_counter": "Brick Andesite Counter",
-    "block.immersivecooking.nether_brick_quartz_counter": "Nether Brick Andesite Counter",
+    "block.immersivecooking.brick_andesite_counter": "Brick Andesite Counter",
+    "block.immersivecooking.nether_brick_andesite_counter": "Nether Brick Andesite Counter",
     "block.immersivecooking.acacia_andesite_counter": "Acacia Andesite Counter",
     "block.immersivecooking.birch_andesite_counter": "Birch Andesite Counter",
     "block.immersivecooking.crimson_andesite_counter": "Crimson Andesite Counter",
@@ -94,8 +94,8 @@
     "block.immersivecooking.spruce_andesite_counter": "Spruce Andesite Counter",
     "block.immersivecooking.warped_andesite_counter": "Warped Andesite Counter",
 
-    "block.immersivecooking.brick_quartz_counter": "Brick Diorite Counter",
-    "block.immersivecooking.nether_brick_quartz_counter": "Nether Brick Diorite Counter",
+    "block.immersivecooking.brick_diorite_counter": "Brick Diorite Counter",
+    "block.immersivecooking.nether_brick_diorite_counter": "Nether Brick Diorite Counter",
     "block.immersivecooking.acacia_diorite_counter": "Acacia Diorite Counter",
     "block.immersivecooking.birch_diorite_counter": "Birch Diorite Counter",
     "block.immersivecooking.crimson_diorite_counter": "Crimson Diorite Counter",
@@ -105,8 +105,8 @@
     "block.immersivecooking.spruce_diorite_counter": "Spruce Diorite Counter",
     "block.immersivecooking.warped_diorite_counter": "Warped Diorite Counter",
 
-    "block.immersivecooking.brick_quartz_counter": "Brick Granite Counter",
-    "block.immersivecooking.nether_brick_quartz_counter": "Nether Brick Granite Counter",
+    "block.immersivecooking.brick_granite_counter": "Brick Granite Counter",
+    "block.immersivecooking.nether_brick_granite_counter": "Nether Brick Granite Counter",
     "block.immersivecooking.acacia_granite_counter": "Acacia Granite Counter",
     "block.immersivecooking.birch_granite_counter": "Birch Granite Counter",
     "block.immersivecooking.crimson_granite_counter": "Crimson Granite Counter",
@@ -134,11 +134,13 @@
   
   
     "item.immersivecooking.raw_spider_shank": "Raw Spider Shank",
+    "item.immersivecooking.clean_spider_shank": "Clean Spider Shank",
     "item.immersivecooking.smoked_spider_shank": "Smoked Spider Shank",
     "item.immersivecooking.raw_spider_cutlet": "Raw Spider cutlet",
     "item.immersivecooking.cooked_spider_cutlet": "Cooked Spider cutlet",
+    "item.immersivecooking.monster_tuft": "Monster Tuft",
     "item.immersivecooking.diced_onion": "Diced Onion",
-    "item.immersivecooking.bamboo_slices": "Bamboo Slices",
+    "item.immersivecooking.bamboo_slice": "Bamboo Slice",
     "item.immersivecooking.potato_slice": "Potato Slice",
     "item.immersivecooking.potato_cubes": "Potato Cubes",
     "item.immersivecooking.fried_potato_slice": "Fried Potato Slice",

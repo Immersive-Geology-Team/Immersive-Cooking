@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TT",
+    "TT"
+  ],
+  "key": {
+    "T": {
+      "item": "immersivecooking:monster_tuft"
+    }
+  },
+  "result": {
+    "item": "minecraft:gray_wool"
+  }
+}

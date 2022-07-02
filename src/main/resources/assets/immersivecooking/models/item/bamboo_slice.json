@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures":{
-    "layer0": "immersivecooking:item/bamboo_slices"
+    "layer0": "immersivecooking:item/bamboo_slice"
   }
 }

@@ -170,16 +170,21 @@ public class Recipes extends RecipeProvider
 
         ShapedRecipeBuilder.shaped(ModBlocks.GLAZED_TILES.get(), 8).define('T', Ingredient.of(Blocks.TERRACOTTA)).define('H', Ingredient.of(Items.HONEYCOMB)).pattern("TTT").pattern("THT").pattern("TTT").unlockedBy("has_clay", has(Items.CLAY_BALL)).save(consumer);
         ShapedRecipeBuilder.shaped(ModBlocks.STOVE_HOOD.get()).define('I', Ingredient.of(Tags.Items.INGOTS_IRON)).define('G', Items.GLOWSTONE_DUST).define('B', Ingredient.of(Blocks.IRON_BARS)).pattern(" I ").pattern(" G ").pattern("IBI").unlockedBy("has_iron", has(Tags.Items.INGOTS_IRON)).save(consumer);
+
+        ShapedRecipeBuilder.shaped(Blocks.GRAY_WOOL).define('T', Ingredient.of(ModItems.MONSTER_TUFT.get())).pattern("TT").pattern("TT").unlockedBy("has_tuft", has(ModItems.MONSTER_TUFT.get())).save(consumer);
     }
 
     protected static void initCooking(Consumer<IFinishedRecipe> consumer)
     {
+        //CLEANING
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.RAW_SPIDER_SHANK.get()), Ingredient.of(Items.SHEARS), ModItems.CLEAN_SPIDER_SHANK.get()).addResult(ModItems.MONSTER_TUFT.get()).addResultWithChance(ModItems.MONSTER_TUFT.get(), 0.65f).build(consumer);
+
         //Chopping
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(vectorwing.farmersdelight.registry.ModItems.ONION.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.DICED_ONION.get(), 4).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BAMBOO), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.BAMBOO_SLICES.get(), 4).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BAMBOO), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.BAMBOO_SLICE.get(), 4).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.POTATO_SLICE.get(), 6).build(consumer);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.POTATO_SLICE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.POTATO_CUBES.get()).build(consumer);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.RAW_SPIDER_SHANK.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.RAW_SPIDER_CUTLET.get(), 4).addResult(Items.BONE).build(consumer);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CLEAN_SPIDER_SHANK.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.RAW_SPIDER_CUTLET.get(), 4).addResult(Items.BONE).build(consumer);
 
         //Grilling
         CookingRecipeBuilder.cooking(Ingredient.of(ModItems.POTATO_SLICE.get()),

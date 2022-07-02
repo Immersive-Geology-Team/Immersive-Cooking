@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "minecraft:bamboo"
+      "item": "immersivecooking:clean_spider_shank"
     }
   ],
   "tool": {
@@ -10,8 +10,11 @@
   },
   "result": [
     {
-      "item": "immersivecooking:bamboo_slice",
+      "item": "immersivecooking:raw_spider_cutlet",
       "count": 4
+    },
+    {
+      "item": "minecraft:bone"
     }
   ]
 }

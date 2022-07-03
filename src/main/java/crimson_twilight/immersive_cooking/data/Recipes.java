@@ -171,7 +171,7 @@ public class Recipes extends RecipeProvider
         ShapedRecipeBuilder.shaped(ModBlocks.GLAZED_TILES.get(), 8).define('T', Ingredient.of(Blocks.TERRACOTTA)).define('H', Ingredient.of(Items.HONEYCOMB)).pattern("TTT").pattern("THT").pattern("TTT").unlockedBy("has_clay", has(Items.CLAY_BALL)).save(consumer);
         ShapedRecipeBuilder.shaped(ModBlocks.STOVE_HOOD.get()).define('I', Ingredient.of(Tags.Items.INGOTS_IRON)).define('G', Items.GLOWSTONE_DUST).define('B', Ingredient.of(Blocks.IRON_BARS)).pattern(" I ").pattern(" G ").pattern("IBI").unlockedBy("has_iron", has(Tags.Items.INGOTS_IRON)).save(consumer);
 
-        ShapedRecipeBuilder.shaped(Blocks.GRAY_WOOL).define('T', Ingredient.of(ModItems.MONSTER_TUFT.get())).pattern("TT").pattern("TT").unlockedBy("has_tuft", has(ModItems.MONSTER_TUFT.get())).save(consumer);
+        ShapedRecipeBuilder.shaped(Blocks.GRAY_WOOL).define('T', Ingredient.of(ModItems.MONSTER_TUFT.get())).pattern("TT").pattern("TT").unlockedBy("has_tuft", has(ModItems.MONSTER_TUFT.get())).save(consumer, "monster_tuft_to_wool");
     }
 
     protected static void initCooking(Consumer<IFinishedRecipe> consumer)
@@ -198,9 +198,9 @@ public class Recipes extends RecipeProvider
         foodSmeltingRecipes("cooked_spider_cutlet", ModItems.RAW_SPIDER_CUTLET.get(), ModItems.COOKED_SPIDER_CUTLET.get(), 0.35f, consumer);
 
         //Smoked
-        CookingRecipeBuilder.cooking(Ingredient.of(ModItems.RAW_SPIDER_SHANK.get()),
+        CookingRecipeBuilder.cooking(Ingredient.of(ModItems.CLEAN_SPIDER_SHANK.get()),
                 ModItems.SMOKED_SPIDER_SHANK.get(), 0.35f, 200, IRecipeSerializer.SMOKING_RECIPE)
-                .unlockedBy("has_monster_meat", has(ModItems.RAW_SPIDER_SHANK.get())).save(consumer);
+                .unlockedBy("has_monster_meat", has(ModItems.CLEAN_SPIDER_SHANK.get())).save(consumer);
 
         //Cooking Pot
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.PYTTIPANNA.get(), 2, CookingRecipes.FAST_COOKING, 0.35F)

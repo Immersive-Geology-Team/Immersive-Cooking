@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "side": "immersivecooking:block/warped_blackstone_counter_side",
-    "bottom": "immersivecooking:block/warped_counter_bottom",
-    "top": "immersivecooking:block/blackstone_countertop"
-  }
-}

@@ -9,6 +9,7 @@ public class ItemFood extends ItemGeneric
     {
         super(foodStuff.getProp());
         this.food=foodStuff;
+        this.hasCraftingRemainingItem();
     }
 
     @Override

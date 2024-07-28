@@ -1,3 +1,14 @@
-// 1.20.1	2024-07-28T23:12:19.684141451	Item Models: immersive_cooking
+// 1.20.1	2024-07-28T16:36:52.0750248	Item Models: immersive_cooking
+95b929c90df31156fadb369f04e6412dc08df6b9 assets/immersive_cooking/models/item/bamboo_slice.json
 30acfcc07af77614e8af112b09ff976509e5727d assets/immersive_cooking/models/item/clean_spider_shank.json
+bf74c79db4b2133b82349c40994a7a42eedecce5 assets/immersive_cooking/models/item/cooked_spider_cutlet.json
+dbb81813e8ddeb8025624083b8ff4c3a8b0ae30e assets/immersive_cooking/models/item/curry_base.json
+e1824c69710e056732cc528a29529535742285f8 assets/immersive_cooking/models/item/diced_onion.json
+662d44ad3fa4fe2cf3bef3210b0d068a76560b81 assets/immersive_cooking/models/item/fried_potato_cubes.json
+b72b0b49f76f1d2008867a06212fc10627e7cfed assets/immersive_cooking/models/item/fried_potato_slice.json
+cf206adf0c9bce7a9737aa852f642902f1af42a4 assets/immersive_cooking/models/item/potato_cubes.json
+fb8c1a5d9aefb18185618f5129f5beaeac063d62 assets/immersive_cooking/models/item/potato_slice.json
+d4c04ed3567b0adf14cb4fa86006d53a309ddae2 assets/immersive_cooking/models/item/pyttipanna.json
+5738781b65b62126c1fd3986527df0061093900c assets/immersive_cooking/models/item/raw_spider_cutlet.json
 81078b90f945c5467fe3e4da92a57bae718caa0c assets/immersive_cooking/models/item/raw_spider_shank.json
+01adcdbaeced24565b9552edfafcd8d61ec902f7 assets/immersive_cooking/models/item/smoked_spider_shank.json

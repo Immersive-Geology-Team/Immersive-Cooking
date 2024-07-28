@@ -33,7 +33,7 @@ public class ImmersiveCooking
     private void init()
     {
         ItemRegistry.init();
-        //BlockRegistry.init()
+        BlockRegistry.init();
     }
     private void register()
     {

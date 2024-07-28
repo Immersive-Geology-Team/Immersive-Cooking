@@ -21,6 +21,7 @@ public class ItemRegistry
     {
         ITEM_MAP.put(name, ITEMS.register(name, supply));
     }
+
     public static void init()
     {
         for (FoodStuff food: FoodStuff.values())

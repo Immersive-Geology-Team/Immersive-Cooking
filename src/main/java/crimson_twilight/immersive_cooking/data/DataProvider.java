@@ -1,6 +1,7 @@
 package crimson_twilight.immersive_cooking.data;
 
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
+import crimson_twilight.immersive_cooking.data.provider.ModBlockModelProvider;
 import crimson_twilight.immersive_cooking.data.provider.ModItemModelProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -19,6 +20,6 @@ public class DataProvider
         DataGenerator gen = e.getGenerator();
         PackOutput out = gen.getPackOutput();
         gen.addProvider(e.includeClient(), new ModItemModelProvider(out, helper));
-
+        gen.addProvider(e.includeClient(), new ModBlockModelProvider(out, helper));
     }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "immersive_cooking:block/base_countertop",
+  "textures": {
+    "front_countertop": "immersive_cooking:block/counter/front/andesite_counter",
+    "side_countertop": "immersive_cooking:block/counter/side/andesite_counter",
+    "top_countertop": "immersive_cooking:block/counter/top/andesite_counter"
+  }
+}

@@ -63,7 +63,7 @@ public class BlockRegistry
             for(CounterTop top : CounterTop.values())
             {
                 String counter_name = top.name().toLowerCase() + "_" + material.name().toLowerCase() + "_counter";
-                registerBlock(counter_name, () -> new BlockCounterBase(counter_name, BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS), material, top));
+                registerBlock(counter_name, () -> new BlockCounterBase(counter_name, Block.Properties.copy(Blocks.OAK_PLANKS), material, top));
                 registerBlockItem(counter_name, () -> new BlockItem(BLOCK_MAP.get(counter_name).get(), new Item.Properties()));
             }
         }

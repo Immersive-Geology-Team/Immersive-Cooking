@@ -2,8 +2,10 @@ package crimson_twilight.immersive_cooking.regestry;
 
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.block.BlockContainerBase;
+import crimson_twilight.immersive_cooking.block.BlockCounterBase;
 import crimson_twilight.immersive_cooking.block.helper.CounterMaterial;
 import crimson_twilight.immersive_cooking.block.helper.CounterTop;
+import crimson_twilight.immersive_cooking.block.helper.PantryMaterial;
 import crimson_twilight.immersive_cooking.item.ItemBlockGeneric;
 import crimson_twilight.immersive_cooking.item.ItemGeneric;
 import net.minecraft.client.renderer.block.model.BlockModel;
@@ -44,15 +46,26 @@ public class BlockRegistry
 
     public static void init()
     {
-        // Register the different types of Counter Tops available
-        for(CounterMaterial material : CounterMaterial.values())
+        // Register the different types of Pantry Counter Tops available
+        for(PantryMaterial pantryMaterial : PantryMaterial.values())
         {
             // This section is the main material of the counter
             for(CounterTop top : CounterTop.values())
             {
-                String counter_name = top.name().toLowerCase() + "_" + material.name().toLowerCase();
-                registerBlock(counter_name, () -> new BlockContainerBase(counter_name, BlockBehaviour.Properties.copy(Blocks.BARREL), material, top));
-                registerBlockItem(counter_name, () -> new ItemBlockGeneric(BLOCK_MAP.get(counter_name).get(), new Item.Properties(), top, material));
+                String counter_name = top.name().toLowerCase() + "_" + pantryMaterial.name().toLowerCase() + "_pantry";
+                registerBlock(counter_name, () -> new BlockContainerBase(counter_name, BlockBehaviour.Properties.copy(Blocks.BARREL), pantryMaterial, top));
+                registerBlockItem(counter_name, () -> new ItemBlockGeneric(BLOCK_MAP.get(counter_name).get(), new Item.Properties(), top, pantryMaterial, null));
+            }
+        }
+        // Register the different types of Pantry Counter Tops available
+        for(CounterMaterial counterMaterial : CounterMaterial.values())
+        {
+            // This section is the main material of the counter
+            for(CounterTop top : CounterTop.values())
+            {
+                String counter_name = top.name().toLowerCase() + "_" + counterMaterial.name().toLowerCase() + "_counter";
+                registerBlock(counter_name, () -> new BlockCounterBase(counter_name, Block.Properties.copy(Blocks.OAK_PLANKS), counterMaterial, top));
+                registerBlockItem(counter_name, () -> new ItemBlockGeneric(BLOCK_MAP.get(counter_name).get(), new Item.Properties(), top, null, counterMaterial));
             }
         }
     }

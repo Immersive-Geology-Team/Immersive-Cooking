@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "immersive_cooking:block/deepslate_spruce_counter",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "immersive_cooking:block/deepslate_spruce_counter"
+    },
+    "facing=south": {
+      "model": "immersive_cooking:block/deepslate_spruce_counter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "immersive_cooking:block/deepslate_spruce_counter",
+      "y": 270
+    }
+  }
+}

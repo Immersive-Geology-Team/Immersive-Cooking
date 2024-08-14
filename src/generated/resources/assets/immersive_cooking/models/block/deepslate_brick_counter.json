@@ -1,0 +1,12 @@
+{
+  "parent": "immersive_cooking:block/base_countertop",
+  "textures": {
+    "bottom_countermaterial": "immersive_cooking:block/pantry/bottom/brick_pantry",
+    "front_countermaterial": "immersive_cooking:block/pantry/side/brick_pantry",
+    "front_countertop": "immersive_cooking:block/counter/front/deepslate_counter",
+    "side_countermaterial": "immersive_cooking:block/pantry/side/brick_pantry",
+    "side_countertop": "immersive_cooking:block/counter/side/deepslate_counter",
+    "top_countermaterial": "immersive_cooking:block/pantry/top/brick_pantry",
+    "top_countertop": "immersive_cooking:block/counter/top/deepslate_counter"
+  }
+}

@@ -3,6 +3,7 @@ package crimson_twilight.immersive_cooking.data.provider;
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.block.helper.CounterMaterial;
 import crimson_twilight.immersive_cooking.block.helper.CounterTop;
+import crimson_twilight.immersive_cooking.block.helper.PantryMaterial;
 import crimson_twilight.immersive_cooking.item.ICItem;
 import crimson_twilight.immersive_cooking.item.ItemBlockGeneric;
 import crimson_twilight.immersive_cooking.item.ItemGeneric;
@@ -48,8 +49,10 @@ public class ModItemModelProvider extends ItemModelProvider
     private void generateGenericBlockItem(Item item){
         if(item instanceof ItemBlockGeneric blockItem) {
             CounterTop top = blockItem.getTopMaterial();
-            CounterMaterial material = blockItem.getBodyMaterial();
-            String counter_name = top.name().toLowerCase() + "_" + material.name().toLowerCase();
+            PantryMaterial pantryMaterial = blockItem.getBodyMaterial();
+            CounterMaterial counterMaterial = blockItem.getCounterBodyMaterial();
+
+            String counter_name = top.name().toLowerCase() + "_" + (pantryMaterial == null ? counterMaterial.name().toLowerCase() + "_counter" : pantryMaterial.name().toLowerCase() + "_pantry");
             String itemLocation = new ResourceLocation(ImmersiveCooking.MODID, "item/" + counter_name).getPath();
             ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+counter_name);
             withExistingParent(itemLocation, counter_model_name);

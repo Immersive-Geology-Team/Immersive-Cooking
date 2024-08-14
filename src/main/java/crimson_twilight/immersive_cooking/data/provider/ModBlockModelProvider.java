@@ -2,6 +2,7 @@ package crimson_twilight.immersive_cooking.data.provider;
 
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.block.BlockContainerBase;
+import crimson_twilight.immersive_cooking.block.BlockCounterBase;
 import crimson_twilight.immersive_cooking.item.ItemGeneric;
 import crimson_twilight.immersive_cooking.regestry.BlockRegistry;
 import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
@@ -10,12 +11,14 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockModelProvider extends BlockStateProvider
 {
+    private static final int DEFAULT_ANGLE_OFFSET = 180;
 
     public ModBlockModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, ImmersiveCooking.MODID, existingFileHelper);
@@ -29,6 +32,7 @@ public class ModBlockModelProvider extends BlockStateProvider
         {
             Block block = object.get();
             if (block instanceof BlockContainerBase generic) generateCounterModel(generic);
+            if (block instanceof BlockCounterBase generic) generateBasicCounterModel(generic);
         }
     }
 
@@ -58,7 +62,41 @@ public class ModBlockModelProvider extends BlockStateProvider
                     .texture("front_countermaterial", countermaterial_front_tex)
                     .texture("bottom_countermaterial", countermaterial_bottom_tex);
 
-            getVariantBuilder(block).forAllStates(blockState -> ConfiguredModel.builder().modelFile(counterModel).build());
+            getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360).modelFile(counterModel).build());
+        }
+        catch (Exception e)
+        {
+            ImmersiveCooking.LOGGER.error("Attempting to register block: "+block.getRegistryName()+", but encountered "+e.getLocalizedMessage());
+        }
+    }
+    private void generateBasicCounterModel(BlockCounterBase block)
+    {
+        ResourceLocation countertop_top_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/top/" + block.getCounterTop().name().toLowerCase() + "_counter");
+        ResourceLocation countertop_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/side/" + block.getCounterTop().name().toLowerCase() + "_counter");
+        ResourceLocation countertop_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/front/" + block.getCounterTop().name().toLowerCase() + "_counter");
+
+        ResourceLocation countermaterial_top_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/top/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_bottom_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/bottom/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+
+
+        ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+block.getRegistryName());
+        ResourceLocation counter_parent_name = new ResourceLocation(ImmersiveCooking.MODID, "block/base_countertop");
+
+        BlockModelBuilder counterModel;
+
+        try {
+            counterModel = models().withExistingParent(counter_model_name.getPath(), counter_parent_name)
+                    .texture("top_countertop", countertop_top_tex)
+                    .texture("side_countertop", countertop_side_tex)
+                    .texture("front_countertop", countertop_front_tex)
+                    .texture("top_countermaterial", countermaterial_top_tex)
+                    .texture("side_countermaterial", countermaterial_side_tex)
+                    .texture("front_countermaterial", countermaterial_front_tex)
+                    .texture("bottom_countermaterial", countermaterial_bottom_tex);
+
+            getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360).modelFile(counterModel).build());
         }
         catch (Exception e)
         {

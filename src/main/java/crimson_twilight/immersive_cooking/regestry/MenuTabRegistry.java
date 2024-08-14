@@ -18,7 +18,7 @@ public class MenuTabRegistry {
     public static final DeferredRegister<CreativeModeTab> TAB_REGISTER = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ImmersiveCooking.MODID);
 
     public static final RegistryObject<CreativeModeTab> IC_BASE_TAB = TAB_REGISTER.register("main", () -> new CreativeModeTab.Builder(CreativeModeTab.Row.TOP, 0)
-            .icon(Items.CAKE::getDefaultInstance)
+            .icon(ItemRegistry.ITEM_MAP.get("raw_spider_shank").get()::getDefaultInstance)
             .title(Component.translatable("itemGroup.immersive_cooking"))
             .displayItems(MenuTabRegistry::fillTab)
             .build());

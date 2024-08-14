@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class ModBlockModelProvider extends BlockStateProvider
 {
@@ -45,15 +46,17 @@ public class ModBlockModelProvider extends BlockStateProvider
         ResourceLocation countermaterial_top_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/top/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
         ResourceLocation countermaterial_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
         ResourceLocation countermaterial_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/front/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_open_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/open/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
         ResourceLocation countermaterial_bottom_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/bottom/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
 
         ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+block.getRegistryName());
         ResourceLocation counter_parent_name = new ResourceLocation(ImmersiveCooking.MODID, "block/base_countertop");
 
-        BlockModelBuilder counterModel;
+        BlockModelBuilder cabinetModel;
+        BlockModelBuilder openCabinetModel;
 
         try {
-            counterModel = models().withExistingParent(counter_model_name.getPath(), counter_parent_name)
+            cabinetModel = models().withExistingParent(counter_model_name.getPath(), counter_parent_name)
                     .texture("top_countertop", countertop_top_tex)
                     .texture("side_countertop", countertop_side_tex)
                     .texture("front_countertop", countertop_front_tex)
@@ -62,7 +65,20 @@ public class ModBlockModelProvider extends BlockStateProvider
                     .texture("front_countermaterial", countermaterial_front_tex)
                     .texture("bottom_countermaterial", countermaterial_bottom_tex);
 
-            getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360).modelFile(counterModel).build());
+            openCabinetModel = models().withExistingParent(counter_model_name.getPath() + "_open", counter_parent_name)
+                    .texture("top_countertop", countertop_top_tex)
+                    .texture("side_countertop", countertop_side_tex)
+                    .texture("front_countertop", countertop_front_tex)
+                    .texture("top_countermaterial", countermaterial_top_tex)
+                    .texture("side_countermaterial", countermaterial_side_tex)
+                    .texture("front_countermaterial", countermaterial_open_tex)
+                    .texture("bottom_countermaterial", countermaterial_bottom_tex);
+
+            getVariantBuilder(block).forAllStates((state) ->
+            {
+                boolean isOpen = state.getValue(CabinetBlock.OPEN);
+                return ConfiguredModel.builder().rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + DEFAULT_ANGLE_OFFSET) % 360).modelFile(isOpen ? openCabinetModel : cabinetModel).build();
+            });
         }
         catch (Exception e)
         {

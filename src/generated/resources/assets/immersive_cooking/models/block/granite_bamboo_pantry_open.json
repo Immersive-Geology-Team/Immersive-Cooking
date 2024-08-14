@@ -1,0 +1,12 @@
+{
+  "parent": "immersive_cooking:block/base_countertop",
+  "textures": {
+    "bottom_countermaterial": "immersive_cooking:block/pantry/bottom/bamboo_pantry",
+    "front_countermaterial": "immersive_cooking:block/pantry/open/bamboo_pantry",
+    "front_countertop": "immersive_cooking:block/counter/front/granite_counter",
+    "side_countermaterial": "immersive_cooking:block/pantry/side/bamboo_pantry",
+    "side_countertop": "immersive_cooking:block/counter/side/granite_counter",
+    "top_countermaterial": "immersive_cooking:block/pantry/top/bamboo_pantry",
+    "top_countertop": "immersive_cooking:block/counter/top/granite_counter"
+  }
+}

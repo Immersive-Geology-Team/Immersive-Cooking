@@ -1,10 +1,15 @@
 package crimson_twilight.immersive_cooking.data.provider;
 
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
+import crimson_twilight.immersive_cooking.block.helper.CounterMaterial;
+import crimson_twilight.immersive_cooking.block.helper.CounterTop;
+import crimson_twilight.immersive_cooking.item.ICItem;
+import crimson_twilight.immersive_cooking.item.ItemBlockGeneric;
 import crimson_twilight.immersive_cooking.item.ItemGeneric;
 import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -25,6 +30,7 @@ public class ModItemModelProvider extends ItemModelProvider
         {
             Item item = object.get();
             if (item instanceof ItemGeneric generic) generateGenericItemModel(generic);
+            generateGenericBlockItem(item);
         }
     }
     private void generateGenericItemModel(ItemGeneric item)
@@ -36,6 +42,17 @@ public class ModItemModelProvider extends ItemModelProvider
         catch (Exception e)
         {
             ImmersiveCooking.LOGGER.error("Attempting to register item: "+item.getRegistryName()+", but encountered "+e.getLocalizedMessage());
+        }
+    }
+
+    private void generateGenericBlockItem(Item item){
+        if(item instanceof ItemBlockGeneric blockItem) {
+            CounterTop top = blockItem.getTopMaterial();
+            CounterMaterial material = blockItem.getBodyMaterial();
+            String counter_name = top.name().toLowerCase() + "_" + material.name().toLowerCase();
+            String itemLocation = new ResourceLocation(ImmersiveCooking.MODID, "item/" + counter_name).getPath();
+            ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+counter_name);
+            withExistingParent(itemLocation, counter_model_name);
         }
     }
 }

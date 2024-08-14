@@ -19,7 +19,7 @@ public class DataProvider
         ExistingFileHelper helper = e.getExistingFileHelper();
         DataGenerator gen = e.getGenerator();
         PackOutput out = gen.getPackOutput();
-        gen.addProvider(e.includeClient(), new ModItemModelProvider(out, helper));
         gen.addProvider(e.includeClient(), new ModBlockModelProvider(out, helper));
+        gen.addProvider(e.includeClient(), new ModItemModelProvider(out, helper));
     }
 }

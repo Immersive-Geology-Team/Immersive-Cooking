@@ -4,6 +4,7 @@ import crimson_twilight.immersive_cooking.event.ClientEventHandler;
 import crimson_twilight.immersive_cooking.event.CommonEventHandler;
 import crimson_twilight.immersive_cooking.regestry.BlockRegistry;
 import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
+import crimson_twilight.immersive_cooking.regestry.MenuTabRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -35,10 +36,14 @@ public class ImmersiveCooking
         ItemRegistry.init();
         BlockRegistry.init();
     }
+
+
+
     private void register()
     {
         final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         ItemRegistry.ITEMS.register(bus);
         BlockRegistry.BLOCKS.register(bus);
+        MenuTabRegistry.TAB_REGISTER.register(bus);
     }
 }

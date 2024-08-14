@@ -4,6 +4,7 @@ import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.block.BlockContainerBase;
 import crimson_twilight.immersive_cooking.block.helper.CounterMaterial;
 import crimson_twilight.immersive_cooking.block.helper.CounterTop;
+import crimson_twilight.immersive_cooking.item.ItemBlockGeneric;
 import crimson_twilight.immersive_cooking.item.ItemGeneric;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.world.item.BlockItem;
@@ -51,7 +52,7 @@ public class BlockRegistry
             {
                 String counter_name = top.name().toLowerCase() + "_" + material.name().toLowerCase();
                 registerBlock(counter_name, () -> new BlockContainerBase(counter_name, BlockBehaviour.Properties.copy(Blocks.BARREL), material, top));
-                registerBlockItem(counter_name, () -> new BlockItem(BLOCK_MAP.get(counter_name).get(), new Item.Properties()));
+                registerBlockItem(counter_name, () -> new ItemBlockGeneric(BLOCK_MAP.get(counter_name).get(), new Item.Properties(), top, material));
             }
         }
     }

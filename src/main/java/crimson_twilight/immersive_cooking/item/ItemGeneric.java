@@ -2,7 +2,7 @@ package crimson_twilight.immersive_cooking.item;
 
 import net.minecraft.world.item.Item;
 
-public class ItemGeneric extends Item
+public class ItemGeneric extends Item implements ICItem
 {
     private String name;
     public ItemGeneric(Properties properties) {

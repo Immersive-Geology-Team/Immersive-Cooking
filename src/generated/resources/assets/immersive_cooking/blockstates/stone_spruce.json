@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=east,open=false": {
+      "model": "immersive_cooking:block/stone_spruce"
+    },
+    "facing=east,open=true": {
+      "model": "immersive_cooking:block/stone_spruce"
+    },
+    "facing=north,open=false": {
+      "model": "immersive_cooking:block/stone_spruce"
+    },
+    "facing=north,open=true": {
+      "model": "immersive_cooking:block/stone_spruce"
+    },
+    "facing=south,open=false": {
+      "model": "immersive_cooking:block/stone_spruce"
+    },
+    "facing=south,open=true": {
+      "model": "immersive_cooking:block/stone_spruce"
+    },
+    "facing=west,open=false": {
+      "model": "immersive_cooking:block/stone_spruce"
+    },
+    "facing=west,open=true": {
+      "model": "immersive_cooking:block/stone_spruce"
+    }
+  }
+}

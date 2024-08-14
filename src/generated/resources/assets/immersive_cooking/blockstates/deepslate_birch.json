@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=east,open=false": {
+      "model": "immersive_cooking:block/deepslate_birch"
+    },
+    "facing=east,open=true": {
+      "model": "immersive_cooking:block/deepslate_birch"
+    },
+    "facing=north,open=false": {
+      "model": "immersive_cooking:block/deepslate_birch"
+    },
+    "facing=north,open=true": {
+      "model": "immersive_cooking:block/deepslate_birch"
+    },
+    "facing=south,open=false": {
+      "model": "immersive_cooking:block/deepslate_birch"
+    },
+    "facing=south,open=true": {
+      "model": "immersive_cooking:block/deepslate_birch"
+    },
+    "facing=west,open=false": {
+      "model": "immersive_cooking:block/deepslate_birch"
+    },
+    "facing=west,open=true": {
+      "model": "immersive_cooking:block/deepslate_birch"
+    }
+  }
+}

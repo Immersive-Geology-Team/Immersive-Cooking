@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=east,open=false": {
+      "model": "immersive_cooking:block/quartz_bamboo"
+    },
+    "facing=east,open=true": {
+      "model": "immersive_cooking:block/quartz_bamboo"
+    },
+    "facing=north,open=false": {
+      "model": "immersive_cooking:block/quartz_bamboo"
+    },
+    "facing=north,open=true": {
+      "model": "immersive_cooking:block/quartz_bamboo"
+    },
+    "facing=south,open=false": {
+      "model": "immersive_cooking:block/quartz_bamboo"
+    },
+    "facing=south,open=true": {
+      "model": "immersive_cooking:block/quartz_bamboo"
+    },
+    "facing=west,open=false": {
+      "model": "immersive_cooking:block/quartz_bamboo"
+    },
+    "facing=west,open=true": {
+      "model": "immersive_cooking:block/quartz_bamboo"
+    }
+  }
+}

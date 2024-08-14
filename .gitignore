@@ -26,3 +26,4 @@ forge*changelog.txt
 /run-data/config/fml.toml
 /src/generated/resources/.cache/
 /run-data/logs/
+/run-data/logs/

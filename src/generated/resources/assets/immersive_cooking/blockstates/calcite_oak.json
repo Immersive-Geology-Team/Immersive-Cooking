@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=east,open=false": {
+      "model": "immersive_cooking:block/calcite_oak"
+    },
+    "facing=east,open=true": {
+      "model": "immersive_cooking:block/calcite_oak"
+    },
+    "facing=north,open=false": {
+      "model": "immersive_cooking:block/calcite_oak"
+    },
+    "facing=north,open=true": {
+      "model": "immersive_cooking:block/calcite_oak"
+    },
+    "facing=south,open=false": {
+      "model": "immersive_cooking:block/calcite_oak"
+    },
+    "facing=south,open=true": {
+      "model": "immersive_cooking:block/calcite_oak"
+    },
+    "facing=west,open=false": {
+      "model": "immersive_cooking:block/calcite_oak"
+    },
+    "facing=west,open=true": {
+      "model": "immersive_cooking:block/calcite_oak"
+    }
+  }
+}

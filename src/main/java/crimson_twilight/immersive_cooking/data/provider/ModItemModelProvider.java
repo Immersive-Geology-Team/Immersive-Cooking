@@ -3,14 +3,12 @@ package crimson_twilight.immersive_cooking.data.provider;
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.block.helper.CounterMaterial;
 import crimson_twilight.immersive_cooking.block.helper.CounterTop;
-import crimson_twilight.immersive_cooking.block.helper.PantryMaterial;
-import crimson_twilight.immersive_cooking.item.ICItem;
+import crimson_twilight.immersive_cooking.block.helper.CabinetMaterial;
 import crimson_twilight.immersive_cooking.item.ItemBlockGeneric;
 import crimson_twilight.immersive_cooking.item.ItemGeneric;
 import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -49,10 +47,10 @@ public class ModItemModelProvider extends ItemModelProvider
     private void generateGenericBlockItem(Item item){
         if(item instanceof ItemBlockGeneric blockItem) {
             CounterTop top = blockItem.getTopMaterial();
-            PantryMaterial pantryMaterial = blockItem.getBodyMaterial();
+            CabinetMaterial cabinetMaterial = blockItem.getBodyMaterial();
             CounterMaterial counterMaterial = blockItem.getCounterBodyMaterial();
 
-            String counter_name = top.name().toLowerCase() + "_" + (pantryMaterial == null ? counterMaterial.name().toLowerCase() + "_counter" : pantryMaterial.name().toLowerCase() + "_pantry");
+            String counter_name = top.name().toLowerCase() + "_" + (cabinetMaterial == null ? counterMaterial.name().toLowerCase() + "_counter" : cabinetMaterial.name().toLowerCase() + "_cabinet");
             String itemLocation = new ResourceLocation(ImmersiveCooking.MODID, "item/" + counter_name).getPath();
             ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+counter_name);
             withExistingParent(itemLocation, counter_model_name);

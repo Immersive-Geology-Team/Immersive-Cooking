@@ -1,12 +1,12 @@
 {
   "parent": "immersive_cooking:block/base_countertop",
   "textures": {
-    "bottom_countermaterial": "immersive_cooking:block/pantry/bottom/acacia_pantry",
-    "front_countermaterial": "immersive_cooking:block/pantry/side/acacia_pantry",
+    "bottom_countermaterial": "immersive_cooking:block/cabinet/bottom/acacia_pantry",
+    "front_countermaterial": "immersive_cooking:block/cabinet/side/acacia_pantry",
     "front_countertop": "immersive_cooking:block/counter/front/granite_counter",
-    "side_countermaterial": "immersive_cooking:block/pantry/side/acacia_pantry",
+    "side_countermaterial": "immersive_cooking:block/cabinet/side/acacia_pantry",
     "side_countertop": "immersive_cooking:block/counter/side/granite_counter",
-    "top_countermaterial": "immersive_cooking:block/pantry/top/acacia_pantry",
+    "top_countermaterial": "immersive_cooking:block/cabinet/top/acacia_pantry",
     "top_countertop": "immersive_cooking:block/counter/top/granite_counter"
   }
 }

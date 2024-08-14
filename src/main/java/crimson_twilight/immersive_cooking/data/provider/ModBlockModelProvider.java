@@ -43,11 +43,11 @@ public class ModBlockModelProvider extends BlockStateProvider
         ResourceLocation countertop_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/side/" + block.getCounterTop().name().toLowerCase() + "_counter");
         ResourceLocation countertop_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/front/" + block.getCounterTop().name().toLowerCase() + "_counter");
 
-        ResourceLocation countermaterial_top_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/top/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/front/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_open_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/open/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_bottom_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/bottom/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_top_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/top/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/front/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_open_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/open/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_bottom_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/bottom/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
 
         ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+block.getRegistryName());
         ResourceLocation counter_parent_name = new ResourceLocation(ImmersiveCooking.MODID, "block/base_countertop");
@@ -91,10 +91,10 @@ public class ModBlockModelProvider extends BlockStateProvider
         ResourceLocation countertop_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/side/" + block.getCounterTop().name().toLowerCase() + "_counter");
         ResourceLocation countertop_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/front/" + block.getCounterTop().name().toLowerCase() + "_counter");
 
-        ResourceLocation countermaterial_top_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/top/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_bottom_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/bottom/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/pantry/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_top_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/top/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_bottom_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/bottom/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
 
 
         ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+block.getRegistryName());

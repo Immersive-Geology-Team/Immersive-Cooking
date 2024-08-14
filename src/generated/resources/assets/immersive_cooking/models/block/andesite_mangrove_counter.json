@@ -1,12 +1,12 @@
 {
   "parent": "immersive_cooking:block/base_countertop",
   "textures": {
-    "bottom_countermaterial": "immersive_cooking:block/pantry/bottom/mangrove_pantry",
-    "front_countermaterial": "immersive_cooking:block/pantry/side/mangrove_pantry",
+    "bottom_countermaterial": "immersive_cooking:block/cabinet/bottom/mangrove_pantry",
+    "front_countermaterial": "immersive_cooking:block/cabinet/side/mangrove_pantry",
     "front_countertop": "immersive_cooking:block/counter/front/andesite_counter",
-    "side_countermaterial": "immersive_cooking:block/pantry/side/mangrove_pantry",
+    "side_countermaterial": "immersive_cooking:block/cabinet/side/mangrove_pantry",
     "side_countertop": "immersive_cooking:block/counter/side/andesite_counter",
-    "top_countermaterial": "immersive_cooking:block/pantry/top/mangrove_pantry",
+    "top_countermaterial": "immersive_cooking:block/cabinet/top/mangrove_pantry",
     "top_countertop": "immersive_cooking:block/counter/top/andesite_counter"
   }
 }

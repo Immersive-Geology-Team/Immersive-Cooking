@@ -9,8 +9,8 @@ public enum CounterMaterial {
     CRIMSON,
     JUNGLE,
     SPRUCE,
-    BRICK, //TODO no pantry versions
-    NETHER_BRICK, //TODO no pantry versions
+    BRICK,
+    NETHER_BRICK,
     CHERRY,
     BAMBOO,
     MANGROVE;

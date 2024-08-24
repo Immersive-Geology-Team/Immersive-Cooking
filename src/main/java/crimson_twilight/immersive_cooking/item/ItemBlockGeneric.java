@@ -3,11 +3,16 @@ package crimson_twilight.immersive_cooking.item;
 import crimson_twilight.immersive_cooking.block.helper.CounterMaterial;
 import crimson_twilight.immersive_cooking.block.helper.CounterTop;
 import crimson_twilight.immersive_cooking.block.helper.CabinetMaterial;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
+//TODO extend out this class into specifics for counters and cabinets
 public class ItemBlockGeneric extends BlockItem implements ICItem {
     private CabinetMaterial body_material;
     private CounterMaterial counter_material;
@@ -28,6 +33,21 @@ public class ItemBlockGeneric extends BlockItem implements ICItem {
     public CabinetMaterial getBodyMaterial()
     {
         return this.body_material;
+    }
+
+    @Override
+    public Component getName(ItemStack stack) {
+        List<Component> descriptionList = new ArrayList<>();
+        boolean isCounter = (counter_material != null);
+
+        descriptionList.add(Component.translatable("material.immersive_cooking." + top_material.name().toLowerCase()));
+        if(isCounter) {
+            descriptionList.add(Component.translatable("material.immersive_cooking." + counter_material.name().toLowerCase()));
+        } else {
+            descriptionList.add(Component.translatable("material.immersive_cooking." + body_material.name().toLowerCase()));
+        }
+
+        return Component.translatable("block.immersive_cooking." + (isCounter ? "counter" : "cabinet"), descriptionList.toArray());
     }
 
     public CounterMaterial getCounterBodyMaterial()

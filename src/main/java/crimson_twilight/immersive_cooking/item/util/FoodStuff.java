@@ -15,16 +15,17 @@ import java.util.function.Supplier;
 
 public enum FoodStuff
 {
+
     //RAW UNPREPARED
-    RAW_SPIDER_SHANK(6, 0.1f, ()->new FoodOptionHolder().set(FoodOptions.MEAT).set(FoodOptions.SHANK), new int[] {600, 200}, new int[] { 1, 0}, new float[] { 1f, 1f}, MobEffects.HUNGER, MobEffects.CONFUSION),
-    CLEAN_SPIDER_SHANK(6, 0.15f, ()->new FoodOptionHolder().set(FoodOptions.MEAT).set(FoodOptions.SHANK), new int[] {200}, new int[] { 1}, new float[] { 0.7f}, MobEffects.HUNGER),
+    RAW_SPIDER_SHANK(6, 0.1f, ()->new FoodOptionHolder().set(FoodOptions.MEAT).set(FoodOptions.SHANK), new int[] {FoodStuff.BRIEF_DURATION, FoodStuff.VERY_BRIEF_DURATION}, new int[] { 1, 0}, new float[] { 1f, 1f}, MobEffects.HUNGER, MobEffects.CONFUSION),
+    CLEAN_SPIDER_SHANK(6, 0.15f, ()->new FoodOptionHolder().set(FoodOptions.MEAT).set(FoodOptions.SHANK), new int[] {FoodStuff.VERY_BRIEF_DURATION}, new int[] { 1 }, new float[] { 0.7f}, MobEffects.HUNGER),
 
     //RAW CHOPPED
     DICED_ONION(1, 0f, ()->new FoodOptionHolder().set(FoodOptions.FAST)),
     POTATO_SLICE(1, 0.1f, ()->new FoodOptionHolder().set(FoodOptions.FAST)),
     POTATO_CUBES(1, 0.1f, ()->new FoodOptionHolder().set(FoodOptions.FAST)),
     BAMBOO_SLICE(1, 0f, ()->new FoodOptionHolder().set(FoodOptions.FAST)),
-    RAW_SPIDER_CUTLET(1, 0.1f, ()->new FoodOptionHolder().set(FoodOptions.MEAT), new int[] {200}, new int[] { 1}, new float[] { 0.7f}, MobEffects.HUNGER),
+    RAW_SPIDER_CUTLET(1, 0.1f, ()->new FoodOptionHolder().set(FoodOptions.MEAT), new int[] {FoodStuff.VERY_BRIEF_DURATION}, new int[] { 1 }, new float[] { 0.7f }, MobEffects.HUNGER),
 
     //BASIC COOKED
     FRIED_POTATO_SLICE(2, 0.4f, ()->new FoodOptionHolder().set(FoodOptions.FAST)),
@@ -36,6 +37,12 @@ public enum FoodStuff
     PYTTIPANNA(10, 0.6f, ()->new FoodOptionHolder().set(FoodOptions.BOWL_ITEM)),
     CURRY_BASE(10, 0.6f, ()->new FoodOptionHolder().set(FoodOptions.BOWL_ITEM));
 
+
+    public static final int VERY_BRIEF_DURATION = 200;    // 10 seconds
+    public static final int BRIEF_DURATION = 600;    // 30 seconds
+    public static final int SHORT_DURATION = 1200;    // 1 minute
+    public static final int MEDIUM_DURATION = 3600;    // 3 minutes
+    public static final int LONG_DURATION = 6000;    // 5 minutes
     private final int nutrition;
     private final float saturation_mod;
     private final MobEffect[] effects;
@@ -72,22 +79,34 @@ public enum FoodStuff
     {
         return this.name().toLowerCase();
     }
-    public Item.Properties getProp() //TODO Fix craftRemainder not returning the item, check that all props work?
+    public Item.Properties getProp()
     {
         Item.Properties prop = new Item.Properties().food(getFood());
-        if (this.options.get().hasOption(FoodOptions.BOWL_ITEM)) prop.craftRemainder(Items.BOWL).stacksTo(16);
-        if (this.options.get().hasOption(FoodOptions.BOTTLE_ITEM)) prop.craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
-        if (this.options.get().hasOption(FoodOptions.SHANK)) prop.craftRemainder(Items.BONE);
-        return prop; //TEMP
+        if (this.options.get().hasOption(FoodOptions.BOWL_ITEM)) {
+            prop.craftRemainder(Items.BOWL).stacksTo(16);
+        }
+        if (this.options.get().hasOption(FoodOptions.BOTTLE_ITEM)) {
+            prop.craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
+        }
+        if (this.options.get().hasOption(FoodOptions.SHANK)) {
+            prop.craftRemainder(Items.BONE);
+        }
+        return prop;
     }
     public FoodProperties getFood()
     {
-        FoodProperties.Builder builder = new FoodProperties.Builder();
-        if (this.options.get().hasOption(FoodOptions.FAST)) builder.fast();
-        if (this.options.get().hasOption(FoodOptions.MEAT)) builder.meat();
-        if (this.options.get().hasOption(FoodOptions.ALWAYS_EAT)) builder.alwaysEat();
+        FoodProperties.Builder builder = (new FoodProperties.Builder());
         builder.nutrition(this.nutrition);
         builder.saturationMod(this.saturation_mod);
+        if (this.options.get().hasOption(FoodOptions.FAST)) {
+            builder.fast();
+        }
+        if (this.options.get().hasOption(FoodOptions.MEAT)) {
+            builder.meat();
+        }
+        if (this.options.get().hasOption(FoodOptions.ALWAYS_EAT)) {
+            builder.alwaysEat();
+        }
         if(effect_durations.length != powers.length || powers.length != effect_chances.length || powers.length != effects.length)
         {
             ImmersiveCooking.LOGGER.warn("Bad Effect Lengths.");

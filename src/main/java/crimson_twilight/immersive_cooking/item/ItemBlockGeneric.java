@@ -16,9 +16,9 @@ import java.util.List;
 public class ItemBlockGeneric extends BlockItem implements ICItem {
     private CabinetMaterial body_material;
     private CounterMaterial counter_material;
-    private final CounterTop top_material;
+    private CounterTop top_material;
 
-    public ItemBlockGeneric(Block p_40565_, Properties p_40566_, CounterTop top_material, @Nullable CabinetMaterial body_material, @Nullable CounterMaterial counterMaterial) {
+    public ItemBlockGeneric(Block p_40565_, Properties p_40566_, @Nullable CounterTop top_material, @Nullable CabinetMaterial body_material, @Nullable CounterMaterial counterMaterial) {
         super(p_40565_, p_40566_);
         this.top_material = top_material;
         this.body_material = body_material;
@@ -37,18 +37,23 @@ public class ItemBlockGeneric extends BlockItem implements ICItem {
 
     @Override
     public Component getName(ItemStack stack) {
-        List<Component> descriptionList = new ArrayList<>();
-        boolean isCounter = (counter_material != null);
 
-        descriptionList.add(Component.translatable("material.immersive_cooking." + top_material.name().toLowerCase()));
-        if(isCounter) {
-            descriptionList.add(Component.translatable("material.immersive_cooking." + counter_material.name().toLowerCase()));
-        } else {
-            descriptionList.add(Component.translatable("material.immersive_cooking." + body_material.name().toLowerCase()));
+        boolean isCounter = (top_material != null);
+        if (isCounter)
+        {
+            List<Component> descriptionList = new ArrayList<>();
+            descriptionList.add(Component.translatable("material.immersive_cooking." + top_material.name().toLowerCase()));
+            if(counter_material != null) {
+                descriptionList.add(Component.translatable("material.immersive_cooking." + counter_material.name().toLowerCase()));
+            } else {
+                descriptionList.add(Component.translatable("material.immersive_cooking." + body_material.name().toLowerCase()));
+            }
+            return Component.translatable("block.immersive_cooking." + (isCounter ? "counter" : "cabinet"), descriptionList.toArray());
         }
 
-        return Component.translatable("block.immersive_cooking." + (isCounter ? "counter" : "cabinet"), descriptionList.toArray());
+        return super.getName(stack);
     }
+
 
     public CounterMaterial getCounterBodyMaterial()
     {

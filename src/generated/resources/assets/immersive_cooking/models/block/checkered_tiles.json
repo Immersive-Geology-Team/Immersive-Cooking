@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "immersive_cooking:block/glazed_kitchen_tiles"
+    "all": "immersive_cooking:block/checkered_tiles"
   }
 }

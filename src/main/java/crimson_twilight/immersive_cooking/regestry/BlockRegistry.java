@@ -66,8 +66,8 @@ public class BlockRegistry
         }
 
         manualBlockRegistration("glazed_tiles", BlockBehaviour.Properties.copy(Blocks.RED_GLAZED_TERRACOTTA));
-        manualBlockRegistration("kitchen_tiles", BlockBehaviour.Properties.copy(Blocks.BLACKSTONE));
-        manualBlockRegistration("glazed_kitchen_tiles", BlockBehaviour.Properties.copy(Blocks.BLACKSTONE));
+        manualBlockRegistration("checkered_tiles", BlockBehaviour.Properties.copy(Blocks.BLACKSTONE));
+        manualBlockRegistration("glazed_checkered_tiles", BlockBehaviour.Properties.copy(Blocks.BLACKSTONE));
     }
 
 

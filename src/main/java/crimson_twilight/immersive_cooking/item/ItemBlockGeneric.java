@@ -48,7 +48,7 @@ public class ItemBlockGeneric extends BlockItem implements ICItem {
             } else {
                 descriptionList.add(Component.translatable("material.immersive_cooking." + body_material.name().toLowerCase()));
             }
-            return Component.translatable("block.immersive_cooking." + (isCounter ? "counter" : "cabinet"), descriptionList.toArray());
+            return Component.translatable("block.immersive_cooking." + (counter_material != null ? "counter" : "cabinet"), descriptionList.toArray());
         }
 
         return super.getName(stack);

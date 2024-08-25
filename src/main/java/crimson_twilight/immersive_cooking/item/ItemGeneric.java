@@ -12,8 +12,13 @@ public class ItemGeneric extends Item implements ICItem
         this(new Properties());
         this.name = name;
     }
+
     public String getRegistryName()
     {
         return name;
+    }
+
+    public void setRegistryName(String registryName){
+        this.name = registryName;
     }
 }

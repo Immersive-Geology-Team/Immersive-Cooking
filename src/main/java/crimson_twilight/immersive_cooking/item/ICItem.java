@@ -17,4 +17,6 @@ public interface ICItem {
     {
         return CounterMaterial.ACACIA;
     }
+
+    String getRegistryName();
 }

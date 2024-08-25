@@ -4,6 +4,8 @@ import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.block.helper.CounterMaterial;
 import crimson_twilight.immersive_cooking.block.helper.CounterTop;
 import crimson_twilight.immersive_cooking.block.helper.CabinetMaterial;
+import crimson_twilight.immersive_cooking.item.ItemBlockCabinet;
+import crimson_twilight.immersive_cooking.item.ItemBlockCounter;
 import crimson_twilight.immersive_cooking.item.ItemBlockGeneric;
 import crimson_twilight.immersive_cooking.item.ItemGeneric;
 import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
@@ -45,15 +47,34 @@ public class ModItemModelProvider extends ItemModelProvider
     }
 
     private void generateGenericBlockItem(Item item){
-        if(item instanceof ItemBlockGeneric blockItem) {
-            CounterTop top = blockItem.getTopMaterial();
-            CabinetMaterial cabinetMaterial = blockItem.getBodyMaterial();
-            CounterMaterial counterMaterial = blockItem.getCounterBodyMaterial();
 
-            String counter_name = top.name().toLowerCase() + "_" + (cabinetMaterial == null ? counterMaterial.name().toLowerCase() + "_counter" : cabinetMaterial.name().toLowerCase() + "_cabinet");
+        if(item instanceof ItemBlockCabinet cabinetItem)
+        {
+
+            CounterTop top = cabinetItem.getTopMaterial();
+            CabinetMaterial cabinetMaterial = cabinetItem.getBodyMaterial();
+
+            String counter_name = top.name().toLowerCase() + "_" + cabinetMaterial.name().toLowerCase() + "_cabinet";
             String itemLocation = new ResourceLocation(ImmersiveCooking.MODID, "item/" + counter_name).getPath();
             ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+counter_name);
             withExistingParent(itemLocation, counter_model_name);
+            return;
+        }
+
+        if(item instanceof ItemBlockCounter counterItem)
+        {
+            CounterTop top = counterItem.getTopMaterial();
+            CounterMaterial counterMaterial = counterItem.getCounterBodyMaterial();
+
+            String counter_name = top.name().toLowerCase() + "_" + counterMaterial.name().toLowerCase() + "_counter";
+            String itemLocation = new ResourceLocation(ImmersiveCooking.MODID, "item/" + counter_name).getPath();
+            ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+counter_name);
+            withExistingParent(itemLocation, counter_model_name);
+            return;
+        }
+
+        if(item instanceof ItemBlockGeneric blockItem) {
+            withExistingParent(blockItem.getRegistryName(), new ResourceLocation(ImmersiveCooking.MODID, "block/" + blockItem.getRegistryName()));
         }
     }
 }

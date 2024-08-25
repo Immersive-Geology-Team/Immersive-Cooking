@@ -32,8 +32,21 @@ public class ModBlockModelProvider extends BlockStateProvider
         for (RegistryObject<Block> object: BlockRegistry.BLOCK_MAP.values())
         {
             Block block = object.get();
-            if (block instanceof BlockContainerBase generic) generateCounterModel(generic);
-            if (block instanceof BlockCounterBase generic) generateBasicCounterModel(generic);
+            if (block instanceof BlockContainerBase generic) {
+                generateCounterModel(generic);
+                continue;
+            }
+            if (block instanceof BlockCounterBase generic)
+            {
+                generateBasicCounterModel(generic);
+                continue;
+            }
+            if (block instanceof Block)
+            {
+                getVariantBuilder(block).forAllStates(state -> {
+                    return ConfiguredModel.builder().modelFile(cubeAll(block)).build();
+                });
+            }
         }
     }
 

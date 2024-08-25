@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "immersive_cooking:block/kitchen_tiles"
+    }
+  }
+}

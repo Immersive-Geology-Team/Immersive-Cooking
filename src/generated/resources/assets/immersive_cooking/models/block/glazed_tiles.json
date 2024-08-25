@@ -1,0 +1,6 @@
+{
+  "parent": "immersive_cooking:block/base_tiles",
+  "textures": {
+    "all": "immersive_cooking:block/glazed_tiles"
+  }
+}

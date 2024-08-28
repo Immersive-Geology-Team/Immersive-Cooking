@@ -10,6 +10,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -27,8 +28,47 @@ public class ModRecipeProvider extends net.minecraft.data.recipes.RecipeProvider
         registerCraftingRecipes(consumer);
     }
 
+    //TODO
+    public static void registerFarmersRecipes(Consumer<FinishedRecipe> consumer)
+    {
+
+    }
+
+    //TODO
+    private static void registerFoodSmeltingRecipe()
+    {
+
+    }
+
     public static void registerCraftingRecipes(Consumer<FinishedRecipe> consumer)
     {
+        // Manual Recipes
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BlockRegistry.BLOCK_MAP.get("checkered_tiles").get().asItem(), 4)
+                .pattern("BC")
+                .pattern("CB")
+                .define('C', Blocks.CALCITE.asItem())
+                .define('B', Blocks.BLACKSTONE.asItem())
+                .unlockedBy("has_blackstone_and_calcite", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.CALCITE.asItem(), Blocks.BLACKSTONE.asItem()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BlockRegistry.BLOCK_MAP.get("glazed_checkered_tiles").get().asItem(), 8)
+                .pattern("CCC")
+                .pattern("CHC")
+                .pattern("CCC")
+                .define('C', BlockRegistry.BLOCK_MAP.get("checkered_tiles").get().asItem())
+                .define('H', Items.HONEYCOMB)
+                .unlockedBy("has_checkered_tiles_and_honeycomb", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegistry.BLOCK_MAP.get("checkered_tiles").get().asItem(), Items.HONEYCOMB))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BlockRegistry.BLOCK_MAP.get("glazed_tiles").get().asItem(), 8)
+                .pattern("CCC")
+                .pattern("CHC")
+                .pattern("CCC")
+                .define('C', Blocks.TERRACOTTA)
+                .define('H', Items.HONEYCOMB)
+                .unlockedBy("has_terracotta_and_honeycomb", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.TERRACOTTA.asItem(), Items.HONEYCOMB))
+                .save(consumer);
+
         for(CounterTop top_material : CounterTop.values())
         {
             // Counters

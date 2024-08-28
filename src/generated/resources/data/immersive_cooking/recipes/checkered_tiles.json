@@ -3,18 +3,19 @@
   "category": "misc",
   "key": {
     "B": {
-      "item": "minecraft:acacia_planks"
+      "item": "minecraft:blackstone"
     },
-    "T": {
-      "item": "minecraft:polished_diorite"
+    "C": {
+      "item": "minecraft:calcite"
     }
   },
   "pattern": [
-    "T",
-    "B"
+    "BC",
+    "CB"
   ],
   "result": {
-    "item": "immersive_cooking:diorite_acacia_counter"
+    "count": 4,
+    "item": "immersive_cooking:checkered_tiles"
   },
   "show_notification": true
 }

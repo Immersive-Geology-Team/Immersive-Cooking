@@ -17,14 +17,14 @@ public enum CounterTop {
     public Item getCraftItem() {
         return switch(this)
         {
-            case ANDESITE -> Blocks.ANDESITE.asItem();
-            case GRANITE -> Blocks.GRANITE.asItem();
+            case ANDESITE -> Blocks.POLISHED_ANDESITE.asItem();
+            case GRANITE -> Blocks.POLISHED_GRANITE.asItem();
             case STONE -> Blocks.STONE.asItem();
-            case BLACKSTONE -> Blocks.BLACKSTONE.asItem();
-            case DIORITE -> Blocks.DIORITE.asItem();
+            case BLACKSTONE -> Blocks.POLISHED_BLACKSTONE.asItem();
+            case DIORITE -> Blocks.POLISHED_DIORITE.asItem();
             case QUARTZ -> Blocks.QUARTZ_BLOCK.asItem();
-            case DEEPSLATE -> Blocks.DEEPSLATE.asItem();
-            case BASALT -> Blocks.BASALT.asItem();
+            case DEEPSLATE -> Blocks.DEEPSLATE_TILES.asItem();
+            case BASALT -> Blocks.POLISHED_BASALT.asItem();
             case CALCITE -> Blocks.CALCITE.asItem();
         };
     }

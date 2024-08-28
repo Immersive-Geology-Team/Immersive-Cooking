@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "immersive_cooking:deepslate_mangrove_counter"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "immersive_cooking:blocks/deepslate_mangrove_counter"
+}

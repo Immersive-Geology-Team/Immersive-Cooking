@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "farmersdelight:cherry_cabinet"
+    },
+    "T": {
+      "item": "minecraft:diorite"
+    }
+  },
+  "pattern": [
+    "T",
+    "B"
+  ],
+  "result": {
+    "item": "immersive_cooking:diorite_cherry_cabinet"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bamboo_planks"
+    },
+    "T": {
+      "item": "minecraft:diorite"
+    }
+  },
+  "pattern": [
+    "T",
+    "B"
+  ],
+  "result": {
+    "item": "immersive_cooking:diorite_bamboo_counter"
+  },
+  "show_notification": true
+}

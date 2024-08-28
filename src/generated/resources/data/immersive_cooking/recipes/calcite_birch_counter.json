@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:birch_planks"
+    },
+    "T": {
+      "item": "minecraft:calcite"
+    }
+  },
+  "pattern": [
+    "T",
+    "B"
+  ],
+  "result": {
+    "item": "immersive_cooking:calcite_birch_counter"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_counter_material_mangrove": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "farmersdelight:mangrove_cabinet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "immersive_cooking:deepslate_mangrove_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_counter_material_mangrove",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "immersive_cooking:deepslate_mangrove_cabinet"
+    ]
+  },
+  "sends_telemetry_event": false
+}

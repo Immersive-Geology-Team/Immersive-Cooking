@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_counter_material_warped": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "farmersdelight:warped_cabinet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "immersive_cooking:blackstone_warped_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_counter_material_warped",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "immersive_cooking:blackstone_warped_cabinet"
+    ]
+  },
+  "sends_telemetry_event": false
+}

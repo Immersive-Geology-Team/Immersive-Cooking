@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:jungle_planks"
+    },
+    "T": {
+      "item": "minecraft:blackstone"
+    }
+  },
+  "pattern": [
+    "T",
+    "B"
+  ],
+  "result": {
+    "item": "immersive_cooking:blackstone_jungle_counter"
+  },
+  "show_notification": true
+}

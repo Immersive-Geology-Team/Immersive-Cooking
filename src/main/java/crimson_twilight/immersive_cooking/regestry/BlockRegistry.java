@@ -42,23 +42,14 @@ public class BlockRegistry
 
     public static void init()
     {
-        // Register the different types of cabinet Counter Tops available
-        for(CabinetMaterial cabinetMaterial : CabinetMaterial.values())
-        {
-            // This section is the main material of the counter
-            for(CounterTop top : CounterTop.values())
-            {
+        for(CounterTop top : CounterTop.values()) {
+            for (CabinetMaterial cabinetMaterial : CabinetMaterial.values()) {
                 String cabinet_name = top.name().toLowerCase() + "_" + cabinetMaterial.name().toLowerCase() + "_cabinet";
                 registerBlock(cabinet_name, () -> new BlockContainerBase(cabinet_name, BlockBehaviour.Properties.copy(Blocks.BARREL), cabinetMaterial, top));
                 registerBlockItem(cabinet_name, () -> new ItemBlockCabinet(BLOCK_MAP.get(cabinet_name).get(), new Item.Properties(), cabinet_name, top, cabinetMaterial));
+
             }
-        }
-        // Register the different types of cabinet Counter Tops available
-        for(CounterMaterial counterMaterial : CounterMaterial.values())
-        {
-            // This section is the main material of the counter
-            for(CounterTop top : CounterTop.values())
-            {
+            for (CounterMaterial counterMaterial : CounterMaterial.values()) {
                 String counter_name = top.name().toLowerCase() + "_" + counterMaterial.name().toLowerCase() + "_counter";
                 registerBlock(counter_name, () -> new BlockCounterBase(counter_name, Block.Properties.copy(Blocks.OAK_PLANKS), counterMaterial, top));
                 registerBlockItem(counter_name, () -> new ItemBlockCounter(BLOCK_MAP.get(counter_name).get(), new Item.Properties(), counter_name, top, counterMaterial));

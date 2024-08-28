@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "entries": [
+    "immersive_cooking:scavenge_meat_from_spider",
+    "immersive_cooking:scavenge_meat_from_cave_spider",
+    "immersive_cooking:scavenge_smoked_meat_from_spider",
+    "immersive_cooking:scavenge_smoked_meat_from_cave_spider"
+  ]
+}

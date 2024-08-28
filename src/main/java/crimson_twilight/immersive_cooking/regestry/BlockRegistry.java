@@ -9,10 +9,13 @@ import crimson_twilight.immersive_cooking.block.helper.CabinetMaterial;
 import crimson_twilight.immersive_cooking.item.ItemBlockCabinet;
 import crimson_twilight.immersive_cooking.item.ItemBlockCounter;
 import crimson_twilight.immersive_cooking.item.ItemBlockGeneric;
+import net.minecraft.world.flag.FeatureFlag;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -45,20 +48,19 @@ public class BlockRegistry
         for(CounterTop top : CounterTop.values()) {
             for (CabinetMaterial cabinetMaterial : CabinetMaterial.values()) {
                 String cabinet_name = top.name().toLowerCase() + "_" + cabinetMaterial.name().toLowerCase() + "_cabinet";
-                registerBlock(cabinet_name, () -> new BlockContainerBase(cabinet_name, BlockBehaviour.Properties.copy(Blocks.BARREL), cabinetMaterial, top));
+                registerBlock(cabinet_name, () -> new BlockContainerBase(cabinet_name, BlockBehaviour.Properties.of().sound(SoundType.WOOD).destroyTime(0.5f).strength(0.3F), cabinetMaterial, top));
                 registerBlockItem(cabinet_name, () -> new ItemBlockCabinet(BLOCK_MAP.get(cabinet_name).get(), new Item.Properties(), cabinet_name, top, cabinetMaterial));
-
             }
             for (CounterMaterial counterMaterial : CounterMaterial.values()) {
                 String counter_name = top.name().toLowerCase() + "_" + counterMaterial.name().toLowerCase() + "_counter";
-                registerBlock(counter_name, () -> new BlockCounterBase(counter_name, Block.Properties.copy(Blocks.OAK_PLANKS), counterMaterial, top));
+                registerBlock(counter_name, () -> new BlockCounterBase(counter_name, Block.Properties.of().sound(SoundType.WOOD).destroyTime(0.5f).strength(0.3F), counterMaterial, top));
                 registerBlockItem(counter_name, () -> new ItemBlockCounter(BLOCK_MAP.get(counter_name).get(), new Item.Properties(), counter_name, top, counterMaterial));
             }
         }
 
-        manualBlockRegistration("glazed_tiles", BlockBehaviour.Properties.copy(Blocks.RED_GLAZED_TERRACOTTA));
-        manualBlockRegistration("checkered_tiles", BlockBehaviour.Properties.copy(Blocks.BLACKSTONE));
-        manualBlockRegistration("glazed_checkered_tiles", BlockBehaviour.Properties.copy(Blocks.BLACKSTONE));
+        manualBlockRegistration("glazed_tiles", BlockBehaviour.Properties.of().sound(SoundType.STONE));
+        manualBlockRegistration("checkered_tiles", BlockBehaviour.Properties.of().sound(SoundType.STONE));
+        manualBlockRegistration("glazed_checkered_tiles", BlockBehaviour.Properties.of().sound(SoundType.STONE));
     }
 
 
@@ -69,7 +71,7 @@ public class BlockRegistry
             ImmersiveCooking.LOGGER.warn("Registry Name for Block already Exists [{}]", registry_name);
             return;
         }
-        registerBlock(registry_name, () -> new Block(properties));
+        registerBlock(registry_name, () -> new Block(properties.destroyTime(0.5f).strength(0.3F)));
         registerBlockItem(registry_name, () -> new ItemBlockGeneric(BLOCK_MAP.get(registry_name).get(), new Item.Properties(), registry_name));
     }
 }

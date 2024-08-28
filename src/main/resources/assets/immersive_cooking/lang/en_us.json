@@ -32,8 +32,8 @@
     "block.immersive_cooking.cabinet": "%s %s Cabinet",
     "block.immersive_cooking.counter": "%s %s Counter",
 
-    "block.immersive_cooking.kitchen_tiles": "Kitchen Tiles",
-    "block.immersive_cooking.glazed_kitchen_tiles": "Glazed Kitchen Tiles",
+    "block.immersive_cooking.checkered_tiles": "Checkered Tiles",
+    "block.immersive_cooking.glazed_checkered_tiles": "Glazed Checkered Tiles",
 
     "block.immersive_cooking.glazed_tiles": "Glazed Tiles",
   

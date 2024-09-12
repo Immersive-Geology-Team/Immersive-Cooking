@@ -1,0 +1,32 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "immersive_cooking:diced_onion"
+    },
+    {
+      "item": "immersive_cooking:bamboo_slice"
+    },
+    {
+      "item": "immersive_cooking:bamboo_slice"
+    },
+    {
+      "tag": "forge:vegetables/tomato"
+    },
+    {
+      "tag": "forge:vegetables/tomato"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "immersive_cooking:curry_base"
+  }
+}

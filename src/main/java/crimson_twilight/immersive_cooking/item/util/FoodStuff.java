@@ -9,7 +9,13 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
+import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
 
+import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.function.Supplier;
 
@@ -17,25 +23,25 @@ public enum FoodStuff
 {
 
     //RAW UNPREPARED
-    RAW_SPIDER_SHANK(6, 0.1f, ()->new FoodOptionHolder().set(FoodOptions.MEAT).set(FoodOptions.SHANK), new int[] {FoodStuff.BRIEF_DURATION, FoodStuff.VERY_BRIEF_DURATION}, new int[] { 1, 0}, new float[] { 1f, 1f}, MobEffects.HUNGER, MobEffects.CONFUSION),
-    CLEAN_SPIDER_SHANK(6, 0.15f, ()->new FoodOptionHolder().set(FoodOptions.MEAT).set(FoodOptions.SHANK), new int[] {FoodStuff.VERY_BRIEF_DURATION}, new int[] { 1 }, new float[] { 0.7f}, MobEffects.HUNGER),
+    RAW_SPIDER_SHANK(6, 0.1f, () -> FoodStuffOptions.MEAT_SHANK, new int[] {FoodStuff.BRIEF_DURATION, FoodStuff.VERY_BRIEF_DURATION}, new int[] { 1, 0}, new float[] { 1f, 1f}, MobEffects.HUNGER, MobEffects.CONFUSION),
+    CLEAN_SPIDER_SHANK(6, 0.15f, () -> FoodStuffOptions.MEAT_SHANK, new int[] {FoodStuff.VERY_BRIEF_DURATION}, new int[] { 1 }, new float[] { 0.7f}, MobEffects.HUNGER),
 
     //RAW CHOPPED
-    DICED_ONION(1, 0f, ()->new FoodOptionHolder().set(FoodOptions.FAST)),
-    POTATO_SLICE(1, 0.1f, ()->new FoodOptionHolder().set(FoodOptions.FAST)),
-    POTATO_CUBES(1, 0.1f, ()->new FoodOptionHolder().set(FoodOptions.FAST)),
-    BAMBOO_SLICE(1, 0f, ()->new FoodOptionHolder().set(FoodOptions.FAST)),
-    RAW_SPIDER_CUTLET(1, 0.1f, ()->new FoodOptionHolder().set(FoodOptions.MEAT), new int[] {FoodStuff.VERY_BRIEF_DURATION}, new int[] { 1 }, new float[] { 0.7f }, MobEffects.HUNGER),
+    DICED_ONION(1, 0f, ()-> FoodStuffOptions.FAST_FOOD),
+    POTATO_SLICE(1, 0.1f, ()-> FoodStuffOptions.FAST_FOOD),
+    POTATO_CUBES(1, 0.1f, ()-> FoodStuffOptions.FAST_FOOD),
+    BAMBOO_SLICE(1, 0f, ()-> FoodStuffOptions.FAST_FOOD),
+    RAW_SPIDER_CUTLET(1, 0.1f, ()-> FoodStuffOptions.MEATY, new int[] {FoodStuff.VERY_BRIEF_DURATION}, new int[] { 1 }, new float[] { 0.7f }, MobEffects.HUNGER),
 
     //BASIC COOKED
-    FRIED_POTATO_SLICE(2, 0.4f, ()->new FoodOptionHolder().set(FoodOptions.FAST)),
-    FRIED_POTATO_CUBES(2, 0.3f, ()->new FoodOptionHolder().set(FoodOptions.FAST)),
-    COOKED_SPIDER_CUTLET(3, 0.5f, ()->new FoodOptionHolder().set(FoodOptions.MEAT)),
-    SMOKED_SPIDER_SHANK(10, 0.6f, ()->new FoodOptionHolder().set(FoodOptions.SHANK)),
+    FRIED_POTATO_SLICE(2, 0.4f, ()-> FoodStuffOptions.FAST_FOOD),
+    FRIED_POTATO_CUBES(2, 0.3f, ()-> FoodStuffOptions.FAST_FOOD),
+    COOKED_SPIDER_CUTLET(3, 0.5f, ()-> FoodStuffOptions.MEATY),
+    SMOKED_SPIDER_SHANK(10, 0.6f, ()-> FoodStuffOptions.FAST_FOOD),
 
     //BOWL FOODS
-    PYTTIPANNA(10, 0.6f, ()->new FoodOptionHolder().set(FoodOptions.BOWL_ITEM)),
-    CURRY_BASE(10, 0.6f, ()->new FoodOptionHolder().set(FoodOptions.BOWL_ITEM));
+    PYTTIPANNA(10, 0.6f, ()-> FoodStuffOptions.BOWL_FOOD),
+    CURRY_BASE(10, 0.6f, ()-> FoodStuffOptions.BOWL_FOOD);
 
 
     public static final int VERY_BRIEF_DURATION = 200;    // 10 seconds
@@ -48,6 +54,7 @@ public enum FoodStuff
     private final MobEffect[] effects;
     private final int[] effect_durations, powers;
     private final float[] effect_chances;
+
     private final Supplier<FoodOptionHolder> options;
 
     FoodStuff(int nutrition, float saturation_mod)
@@ -71,6 +78,11 @@ public enum FoodStuff
         this.effect_chances = effect_chances;
         this.effect_durations = effect_durations;
     }
+
+    public Supplier<FoodOptionHolder> getOptionHolder() {
+        return options;
+    }
+
     public void registerEntry()
     {
         ItemRegistry.registerItem(getRegistryName(), ()->new ItemFood(this));
@@ -123,7 +135,7 @@ public enum FoodStuff
         }
         return builder.build();
     }
-    private enum FoodOptions
+    public enum FoodOptions
     {
         FAST,
         MEAT,
@@ -131,9 +143,9 @@ public enum FoodStuff
         BOWL_ITEM,
         BOTTLE_ITEM,
         SHANK;
-
     }
-    private static class FoodOptionHolder
+
+    public static class FoodOptionHolder
     {
         HashMap<FoodOptions, Boolean> heldOptions;
 
@@ -141,6 +153,7 @@ public enum FoodStuff
         {
             init();
         }
+
         public void init()
         {
             heldOptions = new HashMap<>();

@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "immersive_cooking:potato_slice"
+    }
+  ],
+  "result": [
+    {
+      "item": "immersive_cooking:potato_cubes"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

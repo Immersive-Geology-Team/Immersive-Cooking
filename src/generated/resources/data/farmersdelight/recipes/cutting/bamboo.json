@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:bamboo"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "immersive_cooking:bamboo_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

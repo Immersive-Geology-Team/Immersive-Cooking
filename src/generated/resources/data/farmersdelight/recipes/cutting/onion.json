@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "farmersdelight:onion"
+    }
+  ],
+  "result": [
+    {
+      "item": "immersive_cooking:diced_onion"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

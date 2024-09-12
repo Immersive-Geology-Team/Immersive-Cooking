@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "immersive_cooking:raw_spider_cutlet"
+  },
+  "result": "immersive_cooking:cooked_spider_cutlet"
+}

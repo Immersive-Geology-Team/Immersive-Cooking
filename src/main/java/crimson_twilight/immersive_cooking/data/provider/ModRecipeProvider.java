@@ -9,15 +9,14 @@ import crimson_twilight.immersive_cooking.regestry.BlockRegistry;
 import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CampfireCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.ShapelessRecipe;
+import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -208,6 +207,31 @@ public class ModRecipeProvider extends net.minecraft.data.recipes.RecipeProvider
                 .define('H', Items.HONEYCOMB)
                 .unlockedBy("has_terracotta_and_honeycomb", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.TERRACOTTA.asItem(), Items.HONEYCOMB))
                 .save(consumer);
+
+
+        //SLABS
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BlockRegistry.BLOCK_MAP.get("checkered_tiles_slab").get().asItem(), 6)
+                .pattern("BBB")
+                .define('B', BlockRegistry.BLOCK_MAP.get("checkered_tiles").get().asItem())
+                .unlockedBy("has_checkered_tiles", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegistry.BLOCK_MAP.get("checkered_tiles").get().asItem()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BlockRegistry.BLOCK_MAP.get("glazed_checkered_tiles_slab").get().asItem(), 6)
+                .pattern("BBB")
+                .define('B', BlockRegistry.BLOCK_MAP.get("glazed_checkered_tiles").get().asItem())
+                .unlockedBy("has_glazed_checkered_tiles", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegistry.BLOCK_MAP.get("glazed_checkered_tiles").get().asItem()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BlockRegistry.BLOCK_MAP.get("glazed_tiles_slab").get().asItem(), 6)
+                .pattern("BBB")
+                .define('B', BlockRegistry.BLOCK_MAP.get("glazed_tiles").get().asItem())
+                .unlockedBy("has_glazed_tiles", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegistry.BLOCK_MAP.get("glazed_tiles").get().asItem()))
+                .save(consumer);
+
+        // Stone Cutter
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockRegistry.BLOCK_MAP.get("glazed_tiles").get().asItem()), RecipeCategory.DECORATIONS, BlockRegistry.BLOCK_MAP.get("glazed_tiles_slab").get().asItem(), 2).unlockedBy("has_glazed_tiles", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegistry.BLOCK_MAP.get("glazed_tiles").get().asItem())).save(consumer, "glazed_tiles_slab_from_stonecutting");
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockRegistry.BLOCK_MAP.get("glazed_checkered_tiles").get().asItem()), RecipeCategory.DECORATIONS, BlockRegistry.BLOCK_MAP.get("glazed_checkered_tiles_slab").get().asItem(), 2).unlockedBy("has_glazed_checkered_tiles", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegistry.BLOCK_MAP.get("glazed_checkered_tiles").get().asItem())).save(consumer, "glazed_checkered_tiles_slab_from_stonecutting");
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(BlockRegistry.BLOCK_MAP.get("checkered_tiles").get().asItem()), RecipeCategory.DECORATIONS, BlockRegistry.BLOCK_MAP.get("checkered_tiles_slab").get().asItem(), 2).unlockedBy("has_checkered_tiles", InventoryChangeTrigger.TriggerInstance.hasItems(BlockRegistry.BLOCK_MAP.get("checkered_tiles").get().asItem())).save(consumer, "checkered_tiles_slab_from_stonecutting");
 
         for(CounterTop top_material : CounterTop.values())
         {

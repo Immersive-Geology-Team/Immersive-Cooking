@@ -1,0 +1,9 @@
+{
+  "parent": "immersive_cooking:block/slab/slab_base",
+  "textures": {
+    "all": "immersive_cooking:block/glazed_tiles",
+    "cover": "immersive_cooking:block/glazed_tiles",
+    "particle": "immersive_cooking:block/glazed_tiles",
+    "side": "immersive_cooking:block/glazed_tiles"
+  }
+}

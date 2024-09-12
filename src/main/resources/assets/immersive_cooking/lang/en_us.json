@@ -34,8 +34,11 @@
 
     "block.immersive_cooking.checkered_tiles": "Checkered Tiles",
     "block.immersive_cooking.glazed_checkered_tiles": "Glazed Checkered Tiles",
-
     "block.immersive_cooking.glazed_tiles": "Glazed Tiles",
+
+    "block.immersive_cooking.checkered_tiles_slab": "Checkered Tiles Slab",
+    "block.immersive_cooking.glazed_checkered_tiles_slab": "Glazed Checkered Tiles Slab",
+    "block.immersive_cooking.glazed_tiles_slab": "Glazed Tiles Slab",
   
     "block.immersive_cooking.stove_hood": "Stove Hood",
   

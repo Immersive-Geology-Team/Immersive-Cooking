@@ -1,0 +1,9 @@
+{
+  "parent": "immersive_cooking:block/slab/slab_base_double",
+  "textures": {
+    "all": "immersive_cooking:block/checkered_tiles",
+    "cover": "immersive_cooking:block/checkered_tiles",
+    "particle": "immersive_cooking:block/checkered_tiles",
+    "side": "immersive_cooking:block/checkered_tiles"
+  }
+}

@@ -1,6 +1,7 @@
 package crimson_twilight.immersive_cooking.data.provider;
 
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
+import crimson_twilight.immersive_cooking.block.BasicSlabBlock;
 import crimson_twilight.immersive_cooking.block.BlockContainerBase;
 import crimson_twilight.immersive_cooking.block.BlockCounterBase;
 import crimson_twilight.immersive_cooking.item.ItemGeneric;
@@ -11,7 +12,9 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
@@ -39,6 +42,11 @@ public class ModBlockModelProvider extends BlockStateProvider
             if (block instanceof BlockCounterBase generic)
             {
                 generateBasicCounterModel(generic);
+                continue;
+            }
+            if(block instanceof BasicSlabBlock slab)
+            {
+                generateBasicSlabModel(slab);
                 continue;
             }
             if (block instanceof Block)
@@ -131,5 +139,45 @@ public class ModBlockModelProvider extends BlockStateProvider
         {
             ImmersiveCooking.LOGGER.error("Attempting to register block: "+block.getRegistryName()+", but encountered "+e.getLocalizedMessage());
         }
+    }
+
+    private void generateBasicSlabModel(BasicSlabBlock slab)
+    {
+        VariantBlockStateBuilder builder = getVariantBuilder(slab);
+        BlockModelBuilder baseModel = models().withExistingParent(new ResourceLocation(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase()).getPath(),
+                new ResourceLocation(ImmersiveCooking.MODID, "block/slab/slab_base"));
+
+        BlockModelBuilder topModel = models().withExistingParent(new ResourceLocation(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase() + "_top").getPath(),
+                new ResourceLocation(ImmersiveCooking.MODID, "block/slab/slab_base_top"));
+
+        BlockModelBuilder doubleModel = models().withExistingParent(new ResourceLocation(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase() + "_double").getPath(),
+                new ResourceLocation(ImmersiveCooking.MODID, "block/slab/slab_base_double"));
+
+        ResourceLocation rTextureLocBase = new ResourceLocation(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase().replace("_slab", ""));
+        ResourceLocation rTextureLocSide = new ResourceLocation(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase().replace("_slab", ""));
+
+        baseModel.texture("particle", rTextureLocBase);
+        topModel.texture("particle", rTextureLocBase);
+        doubleModel.texture("particle", rTextureLocBase);
+
+        doubleModel.texture("all", rTextureLocBase);
+        topModel.texture("all", rTextureLocBase);
+        baseModel.texture("all", rTextureLocBase);
+
+        doubleModel.texture("side", rTextureLocSide);
+        doubleModel.texture("cover", rTextureLocBase);
+
+        topModel.texture("side", rTextureLocSide);
+        topModel.texture("cover", rTextureLocBase);
+
+        baseModel.texture("side", rTextureLocSide);
+        baseModel.texture("cover", rTextureLocBase);
+
+        builder.forAllStates(blockState ->
+                blockState.getValue(SlabBlock.TYPE) == SlabType.BOTTOM ?
+                        (ConfiguredModel.builder().modelFile(baseModel).uvLock(true).build()):
+                        blockState.getValue(SlabBlock.TYPE) == SlabType.TOP ?
+                                (ConfiguredModel.builder().modelFile(topModel).uvLock(true).build()):
+                                (ConfiguredModel.builder().modelFile(doubleModel).uvLock(true).build()));
     }
 }

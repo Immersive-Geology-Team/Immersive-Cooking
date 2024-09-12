@@ -1,6 +1,9 @@
 package crimson_twilight.immersive_cooking.block.helper;
 
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
 public enum CounterTop {
@@ -27,5 +30,10 @@ public enum CounterTop {
             case BASALT -> Blocks.POLISHED_BASALT.asItem();
             case CALCITE -> Blocks.CALCITE.asItem();
         };
+    }
+
+    public TagKey<Block> getMineableType()
+    {
+        return BlockTags.MINEABLE_WITH_PICKAXE;
     }
 }

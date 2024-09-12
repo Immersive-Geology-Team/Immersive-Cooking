@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "type=bottom,waterlogged=false": {
+      "model": "immersive_cooking:block/glazed_checkered_tiles_slab",
+      "uvlock": true
+    },
+    "type=bottom,waterlogged=true": {
+      "model": "immersive_cooking:block/glazed_checkered_tiles_slab",
+      "uvlock": true
+    },
+    "type=double,waterlogged=false": {
+      "model": "immersive_cooking:block/glazed_checkered_tiles_slab_double",
+      "uvlock": true
+    },
+    "type=double,waterlogged=true": {
+      "model": "immersive_cooking:block/glazed_checkered_tiles_slab_double",
+      "uvlock": true
+    },
+    "type=top,waterlogged=false": {
+      "model": "immersive_cooking:block/glazed_checkered_tiles_slab_top",
+      "uvlock": true
+    },
+    "type=top,waterlogged=true": {
+      "model": "immersive_cooking:block/glazed_checkered_tiles_slab_top",
+      "uvlock": true
+    }
+  }
+}

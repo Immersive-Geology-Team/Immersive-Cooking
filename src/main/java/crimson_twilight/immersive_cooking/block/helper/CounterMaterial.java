@@ -1,6 +1,9 @@
 package crimson_twilight.immersive_cooking.block.helper;
 
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
 public enum CounterMaterial {
@@ -35,5 +38,10 @@ public enum CounterMaterial {
             case BAMBOO -> Blocks.BAMBOO_PLANKS.asItem();
             case MANGROVE -> Blocks.MANGROVE_PLANKS.asItem();
         };
+    }
+
+    public TagKey<Block> getMineableType()
+    {
+        return BlockTags.MINEABLE_WITH_AXE;
     }
 }

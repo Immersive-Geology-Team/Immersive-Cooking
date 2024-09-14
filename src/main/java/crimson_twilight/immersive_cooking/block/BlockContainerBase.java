@@ -4,6 +4,7 @@ import crimson_twilight.immersive_cooking.block.helper.CounterTop;
 import crimson_twilight.immersive_cooking.block.helper.CabinetMaterial;
 import crimson_twilight.immersive_cooking.client.ModRenderHandler;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class BlockContainerBase extends CabinetBlock {
@@ -16,7 +17,7 @@ public class BlockContainerBase extends CabinetBlock {
         this.body_material = material;
         this.top_material = top;
         this.name = name;
-        ModRenderHandler.setRenderType(this, ModRenderHandler.RenderTypeSkeleton.CUTOUT_MIPPED);
+        if (FMLEnvironment.dist.isClient()) {ModRenderHandler.setRenderType(this, ModRenderHandler.RenderTypeSkeleton.CUTOUT_MIPPED);}
     }
 
     public CabinetMaterial getCounterMaterial()

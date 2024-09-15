@@ -17,7 +17,6 @@ public class BlockContainerBase extends CabinetBlock {
         this.body_material = material;
         this.top_material = top;
         this.name = name;
-        if (FMLEnvironment.dist.isClient()) {ModRenderHandler.setRenderType(this, ModRenderHandler.RenderTypeSkeleton.CUTOUT_MIPPED);}
     }
 
     public CabinetMaterial getCounterMaterial()

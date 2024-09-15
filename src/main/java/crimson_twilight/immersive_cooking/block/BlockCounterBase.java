@@ -29,7 +29,6 @@ public class BlockCounterBase extends BasicBlock {
         super(name, properties);
         this.body_material = material;
         this.top_material = top;
-        if (FMLEnvironment.dist.isClient()) ModRenderHandler.setRenderType(this, ModRenderHandler.RenderTypeSkeleton.CUTOUT_MIPPED);
         this.registerDefaultState((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH)));
     }
 

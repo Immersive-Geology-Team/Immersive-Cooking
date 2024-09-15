@@ -208,7 +208,6 @@ public class ModRecipeProvider extends net.minecraft.data.recipes.RecipeProvider
                 .unlockedBy("has_terracotta_and_honeycomb", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.TERRACOTTA.asItem(), Items.HONEYCOMB))
                 .save(consumer);
 
-
         //SLABS
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BlockRegistry.BLOCK_MAP.get("checkered_tiles_slab").get().asItem(), 6)
                 .pattern("BBB")

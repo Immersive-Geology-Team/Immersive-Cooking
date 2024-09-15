@@ -37,6 +37,7 @@ public class ModRenderHandler implements BlockColor, ItemColor {
             if(b instanceof BlockContainerBase){
                 Minecraft.getInstance().getBlockColors().register(INSTANCE, b);
             }
+            setRenderType(b, ModRenderHandler.RenderTypeSkeleton.CUTOUT_MIPPED);
         }
     }
 
@@ -59,9 +60,7 @@ public class ModRenderHandler implements BlockColor, ItemColor {
     }
 
     public static void setRenderType(Block block, RenderTypeSkeleton skeleton) {
-        DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> {
-            setRenderTypeClient(block, skeleton);
-        });
+        setRenderTypeClient(block, skeleton);
     }
 
     @OnlyIn(Dist.CLIENT)

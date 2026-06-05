@@ -1,9 +1,7 @@
 package crimson_twilight.immersive_cooking.block;
 
-import com.google.common.collect.ImmutableMap;
 import crimson_twilight.immersive_cooking.block.helper.CounterTop;
 import crimson_twilight.immersive_cooking.block.helper.CounterMaterial;
-import crimson_twilight.immersive_cooking.client.ModRenderHandler;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
@@ -13,11 +11,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.Property;
-import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.fml.loading.FMLEnvironment;
-import vectorwing.farmersdelight.common.block.CabinetBlock;
-
-import java.util.function.Function;
 
 public class BlockCounterBase extends BasicBlock {
     private final CounterMaterial body_material;

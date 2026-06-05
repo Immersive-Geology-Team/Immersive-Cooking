@@ -12,9 +12,9 @@ import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 public class ModItemModelProvider extends ItemModelProvider
 {
@@ -27,7 +27,7 @@ public class ModItemModelProvider extends ItemModelProvider
     protected void registerModels()
     {
         ImmersiveCooking.LOGGER.info("Starting Item Model Provider");
-        for (RegistryObject<Item> object: ItemRegistry.ITEM_MAP.values())
+        for (DeferredItem<Item> object: ItemRegistry.ITEM_MAP.values())
         {
             Item item = object.get();
             if (item instanceof ItemGeneric generic) generateGenericItemModel(generic);
@@ -36,9 +36,10 @@ public class ModItemModelProvider extends ItemModelProvider
     }
     private void generateGenericItemModel(ItemGeneric item)
     {
-        ResourceLocation location = new ResourceLocation(ImmersiveCooking.MODID, "item/"+item.getRegistryName());
+        ResourceLocation location = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "item/"+item.getRegistryName());
         try {
-            withExistingParent(location.getPath(), new ResourceLocation("item/generated")).texture("layer0", location);
+            withExistingParent(location.getPath(), ResourceLocation.withDefaultNamespace("item/generated"))
+                    .texture("layer0", location);
         }
         catch (Exception e)
         {
@@ -55,8 +56,8 @@ public class ModItemModelProvider extends ItemModelProvider
             CabinetMaterial cabinetMaterial = cabinetItem.getBodyMaterial();
 
             String counter_name = top.name().toLowerCase() + "_" + cabinetMaterial.name().toLowerCase() + "_cabinet";
-            String itemLocation = new ResourceLocation(ImmersiveCooking.MODID, "item/" + counter_name).getPath();
-            ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+counter_name);
+            String itemLocation = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "item/" + counter_name).getPath();
+            ResourceLocation counter_model_name = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/"+counter_name);
             withExistingParent(itemLocation, counter_model_name);
             return;
         }
@@ -67,14 +68,14 @@ public class ModItemModelProvider extends ItemModelProvider
             CounterMaterial counterMaterial = counterItem.getCounterBodyMaterial();
 
             String counter_name = top.name().toLowerCase() + "_" + counterMaterial.name().toLowerCase() + "_counter";
-            String itemLocation = new ResourceLocation(ImmersiveCooking.MODID, "item/" + counter_name).getPath();
-            ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+counter_name);
+            String itemLocation = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "item/" + counter_name).getPath();
+            ResourceLocation counter_model_name = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/"+counter_name);
             withExistingParent(itemLocation, counter_model_name);
             return;
         }
 
         if(item instanceof ItemBlockGeneric blockItem) {
-            withExistingParent(blockItem.getRegistryName(), new ResourceLocation(ImmersiveCooking.MODID, "block/" + blockItem.getRegistryName()));
+            withExistingParent(blockItem.getRegistryName(), ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/" + blockItem.getRegistryName()));
         }
     }
 }

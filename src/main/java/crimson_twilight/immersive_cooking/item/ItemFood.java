@@ -12,10 +12,10 @@ import net.minecraft.world.level.Level;
 public class ItemFood extends ItemGeneric
 {
     private final FoodStuff food;
-    public ItemFood(FoodStuff foodStuff)
-    {
+
+    public ItemFood(FoodStuff foodStuff) {
         super(foodStuff.getProp());
-        this.food=foodStuff;
+        this.food = foodStuff;
         this.hasCraftingRemainingItem();
     }
 
@@ -32,7 +32,7 @@ public class ItemFood extends ItemGeneric
 
         ItemStack containerStack = stack.getCraftingRemainingItem();
 
-        if (stack.isEdible()) {
+        if (stack.getFoodProperties(consumer) != null) {
             super.finishUsingItem(stack, level, consumer);
         } else {
             Player player = consumer instanceof Player ? (Player) consumer : null;

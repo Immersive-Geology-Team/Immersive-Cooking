@@ -2,7 +2,6 @@ package crimson_twilight.immersive_cooking.data.provider;
 
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.block.BasicBlock;
-import crimson_twilight.immersive_cooking.block.BasicSlabBlock;
 import crimson_twilight.immersive_cooking.block.BlockContainerBase;
 import crimson_twilight.immersive_cooking.block.BlockCounterBase;
 import crimson_twilight.immersive_cooking.regestry.BlockRegistry;
@@ -10,11 +9,10 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.BlockTagsProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import org.jetbrains.annotations.Nullable;
-import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -27,7 +25,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider)
     {
-        for(RegistryObject<Block> block : BlockRegistry.BLOCK_MAP.values())
+        for(DeferredBlock<Block> block : BlockRegistry.BLOCK_MAP.values())
         {
             if(block.get() instanceof BlockContainerBase cabinetBlock)
             {

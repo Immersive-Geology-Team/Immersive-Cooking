@@ -23,7 +23,7 @@ public class ItemBlockCabinet extends ItemBlockGeneric {
     }
 
     @Override
-    public Component getName(ItemStack p_41458_) {
+    public Component getName(ItemStack ignored) {
         MutableComponent top_lang = Component.translatable("material.immersive_cooking." + top_material.name().toLowerCase());
         MutableComponent body_lang = Component.translatable("material.immersive_cooking." + body_material.name().toLowerCase());
         return Component.translatable("block.immersive_cooking.cabinet", top_lang, body_lang);

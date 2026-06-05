@@ -15,9 +15,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.SlabType;
-import net.minecraftforge.client.model.generators.*;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
+import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.neoforged.neoforge.client.model.generators.VariantBlockStateBuilder;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class ModBlockModelProvider extends BlockStateProvider
@@ -32,7 +35,7 @@ public class ModBlockModelProvider extends BlockStateProvider
     protected void registerStatesAndModels()
     {
         ImmersiveCooking.LOGGER.info("Starting Block State Model Provider");
-        for (RegistryObject<Block> object: BlockRegistry.BLOCK_MAP.values())
+        for (DeferredBlock<Block> object: BlockRegistry.BLOCK_MAP.values())
         {
             Block block = object.get();
             if (block instanceof BlockContainerBase generic) {
@@ -51,27 +54,25 @@ public class ModBlockModelProvider extends BlockStateProvider
             }
             if (block instanceof Block)
             {
-                getVariantBuilder(block).forAllStates(state -> {
-                    return ConfiguredModel.builder().modelFile(cubeAll(block)).build();
-                });
+                getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(cubeAll(block)).build());
             }
         }
     }
 
     private void generateCounterModel(BlockContainerBase block)
     {
-        ResourceLocation countertop_top_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/top/" + block.getCounterTop().name().toLowerCase() + "_counter");
-        ResourceLocation countertop_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/side/" + block.getCounterTop().name().toLowerCase() + "_counter");
-        ResourceLocation countertop_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/front/" + block.getCounterTop().name().toLowerCase() + "_counter");
+        ResourceLocation countertop_top_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/counter/top/" + block.getCounterTop().name().toLowerCase() + "_counter");
+        ResourceLocation countertop_side_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/counter/side/" + block.getCounterTop().name().toLowerCase() + "_counter");
+        ResourceLocation countertop_front_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/counter/front/" + block.getCounterTop().name().toLowerCase() + "_counter");
 
-        ResourceLocation countermaterial_top_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/top/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/front/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_open_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/open/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_bottom_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/bottom/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_top_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/cabinet/top/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_side_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/cabinet/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_front_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/cabinet/front/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_open_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/cabinet/open/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_bottom_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/cabinet/bottom/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
 
-        ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+block.getRegistryName());
-        ResourceLocation counter_parent_name = new ResourceLocation(ImmersiveCooking.MODID, "block/base_countertop");
+        ResourceLocation counter_model_name = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/"+block.getRegistryName());
+        ResourceLocation counter_parent_name = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/base_countertop");
 
         BlockModelBuilder cabinetModel;
         BlockModelBuilder openCabinetModel;
@@ -108,18 +109,18 @@ public class ModBlockModelProvider extends BlockStateProvider
     }
     private void generateBasicCounterModel(BlockCounterBase block)
     {
-        ResourceLocation countertop_top_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/top/" + block.getCounterTop().name().toLowerCase() + "_counter");
-        ResourceLocation countertop_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/side/" + block.getCounterTop().name().toLowerCase() + "_counter");
-        ResourceLocation countertop_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/counter/front/" + block.getCounterTop().name().toLowerCase() + "_counter");
+        ResourceLocation countertop_top_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/counter/top/" + block.getCounterTop().name().toLowerCase() + "_counter");
+        ResourceLocation countertop_side_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/counter/side/" + block.getCounterTop().name().toLowerCase() + "_counter");
+        ResourceLocation countertop_front_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/counter/front/" + block.getCounterTop().name().toLowerCase() + "_counter");
 
-        ResourceLocation countermaterial_top_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/top/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_side_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_bottom_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/bottom/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
-        ResourceLocation countermaterial_front_tex = new ResourceLocation(ImmersiveCooking.MODID, "block/cabinet/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_top_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/cabinet/top/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_side_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/cabinet/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_bottom_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/cabinet/bottom/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
+        ResourceLocation countermaterial_front_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/cabinet/side/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
 
 
-        ResourceLocation counter_model_name = new ResourceLocation(ImmersiveCooking.MODID, "block/"+block.getRegistryName());
-        ResourceLocation counter_parent_name = new ResourceLocation(ImmersiveCooking.MODID, "block/base_countertop");
+        ResourceLocation counter_model_name = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/"+block.getRegistryName());
+        ResourceLocation counter_parent_name = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/base_countertop");
 
         BlockModelBuilder counterModel;
 
@@ -144,17 +145,17 @@ public class ModBlockModelProvider extends BlockStateProvider
     private void generateBasicSlabModel(BasicSlabBlock slab)
     {
         VariantBlockStateBuilder builder = getVariantBuilder(slab);
-        BlockModelBuilder baseModel = models().withExistingParent(new ResourceLocation(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase()).getPath(),
-                new ResourceLocation(ImmersiveCooking.MODID, "block/slab/slab_base"));
+        BlockModelBuilder baseModel = models().withExistingParent(ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase()).getPath(),
+                ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/slab/slab_base"));
 
-        BlockModelBuilder topModel = models().withExistingParent(new ResourceLocation(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase() + "_top").getPath(),
-                new ResourceLocation(ImmersiveCooking.MODID, "block/slab/slab_base_top"));
+        BlockModelBuilder topModel = models().withExistingParent(ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase() + "_top").getPath(),
+                ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/slab/slab_base_top"));
 
-        BlockModelBuilder doubleModel = models().withExistingParent(new ResourceLocation(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase() + "_double").getPath(),
-                new ResourceLocation(ImmersiveCooking.MODID, "block/slab/slab_base_double"));
+        BlockModelBuilder doubleModel = models().withExistingParent(ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase() + "_double").getPath(),
+                ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/slab/slab_base_double"));
 
-        ResourceLocation rTextureLocBase = new ResourceLocation(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase().replace("_slab", ""));
-        ResourceLocation rTextureLocSide = new ResourceLocation(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase().replace("_slab", ""));
+        ResourceLocation rTextureLocBase = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase().replace("_slab", ""));
+        ResourceLocation rTextureLocSide = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/" + slab.getRegistryName().toLowerCase().replace("_slab", ""));
 
         baseModel.texture("particle", rTextureLocBase);
         topModel.texture("particle", rTextureLocBase);

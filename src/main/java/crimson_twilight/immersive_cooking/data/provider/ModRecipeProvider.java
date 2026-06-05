@@ -16,9 +16,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
-import vectorwing.farmersdelight.data.ItemTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
@@ -60,7 +60,9 @@ public class ModRecipeProvider extends net.minecraft.data.recipes.RecipeProvider
                 builder.addIngredient(ingredient_record.ingredient, ingredient_record.size);
             }
 
-            builder.save(output);
+            builder.unlockedByAnyIngredient(ItemRegistry.ITEM_MAP.get(FoodStuff.DICED_ONION.getRegistryName()).get())
+                    .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                    .save(output);
         }
 
         grillRecipe("potato_slice_to_fried_potato_slice", ItemRegistry.ITEM_MAP.get(FoodStuff.POTATO_SLICE.getRegistryName()).get().asItem(), ItemRegistry.ITEM_MAP.get(FoodStuff.FRIED_POTATO_SLICE.getRegistryName()).get().asItem(), .35f, 600, output);

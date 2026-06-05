@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "immersive_cooking:checkered_tiles"
+    },
+    "H": {
+      "item": "minecraft:honeycomb"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CHC",
+    "CCC"
+  ],
+  "result": {
+    "count": 8,
+    "id": "immersive_cooking:glazed_checkered_tiles"
+  }
+}

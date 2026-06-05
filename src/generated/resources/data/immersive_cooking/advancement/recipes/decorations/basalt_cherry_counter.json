@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_counter_material_cherry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cherry_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "immersive_cooking:basalt_cherry_counter"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_counter_material_cherry"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "immersive_cooking:basalt_cherry_counter"
+    ]
+  }
+}

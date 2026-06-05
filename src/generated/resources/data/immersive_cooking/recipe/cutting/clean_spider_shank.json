@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "immersive_cooking:clean_spider_shank"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "immersive_cooking:raw_spider_cutlet"
+      }
+    },
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:bone"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

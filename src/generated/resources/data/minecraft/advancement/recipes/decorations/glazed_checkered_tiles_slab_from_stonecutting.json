@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glazed_checkered_tiles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "immersive_cooking:glazed_checkered_tiles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:glazed_checkered_tiles_slab_from_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_glazed_checkered_tiles"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:glazed_checkered_tiles_slab_from_stonecutting"
+    ]
+  }
+}

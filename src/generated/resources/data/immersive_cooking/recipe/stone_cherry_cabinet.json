@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "farmersdelight:cherry_cabinet"
+    },
+    "T": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "T",
+    "B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersive_cooking:stone_cherry_cabinet"
+  }
+}

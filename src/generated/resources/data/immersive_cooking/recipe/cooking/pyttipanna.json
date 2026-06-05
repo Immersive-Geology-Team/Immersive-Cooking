@@ -1,0 +1,34 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "immersive_cooking:diced_onion"
+    },
+    {
+      "item": "immersive_cooking:potato_cubes"
+    },
+    {
+      "item": "immersive_cooking:potato_cubes"
+    },
+    {
+      "tag": "c:foods/raw_beef"
+    },
+    {
+      "tag": "c:foods/raw_bacon"
+    },
+    {
+      "tag": "c:foods/raw_pork"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 2,
+    "id": "immersive_cooking:pyttipanna"
+  }
+}

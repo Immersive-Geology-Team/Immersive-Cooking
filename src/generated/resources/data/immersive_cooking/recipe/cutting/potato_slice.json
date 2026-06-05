@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "immersive_cooking:potato_slice"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "immersive_cooking:potato_cubes"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

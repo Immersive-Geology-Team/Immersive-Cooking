@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:spruce_planks"
+    },
+    "T": {
+      "item": "minecraft:polished_blackstone"
+    }
+  },
+  "pattern": [
+    "T",
+    "B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersive_cooking:blackstone_spruce_counter"
+  }
+}

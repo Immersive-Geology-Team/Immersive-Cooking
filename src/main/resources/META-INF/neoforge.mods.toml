@@ -1,0 +1,36 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="immersive_cooking"
+version="2.1.0"
+displayName="Immersive Cooking"
+authors="Crimson Twilight(Kuruma)"
+description='''Cooking Companion'''
+# logoFile="examplemod.png"
+
+# --- Dependencies ---
+
+# Minecraft Dependency
+[[dependencies.immersive_cooking]] # Hardcoded your ID here
+modId="minecraft"
+type="required"
+versionRange="[1.21.1]"
+ordering="NONE"
+side="BOTH"
+
+# NeoForge Dependency
+[[dependencies.immersive_cooking]] # Hardcoded your ID here
+modId="neoforge"
+type="required"
+versionRange="[21.1.233,)" # Set explicitly to match your neo_version
+ordering="NONE"
+side="BOTH"
+
+# [[dependencies.${mod_id}]]
+#     modId="farmersdelight"
+#     type="required"
+#     versionRange="[1.21.1-1.3.0,)"
+#     ordering="AFTER"
+#     side="BOTH"

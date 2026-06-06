@@ -33,7 +33,9 @@ public class DataProvider
         gen.addProvider(e.includeClient(), new ModRecipeProvider(out, lookup));
 
         // Server Providers
-        gen.addProvider(e.includeServer(), new ModBlockTagProvider(out, lookup, helper));
+        ModBlockTagProvider blockTags = new ModBlockTagProvider(out, lookup, helper);
+        gen.addProvider(e.includeServer(), blockTags);
+        gen.addProvider(e.includeServer(), new ModItemTagProvider(out, lookup, blockTags.contentsGetter()));
 
         // Updated LootTableProvider for 1.21.1
         gen.addProvider(e.includeServer(), new LootTableProvider(

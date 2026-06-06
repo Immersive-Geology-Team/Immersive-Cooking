@@ -71,7 +71,7 @@ public enum FoodStuff
     }
 
     public void registerEntry() {
-        ItemRegistry.registerItem(getRegistryName(), ()->new ItemFood(this));
+        ItemRegistry.registerItem(getRegistryName(), ()-> new ItemFood(this));
     }
 
     public String getRegistryName() {
@@ -99,10 +99,6 @@ public enum FoodStuff
 
         if (this.options.get().hasOption(FoodOptions.FAST)) {
             builder.fast();
-        }
-        if (this.options.get().hasOption(FoodOptions.MEAT)) {
-//            builder.meat();
-            // This is no longer handled by such a call, but can instead be done with an item tag. TODO: do this
         }
 
         if (this.options.get().hasOption(FoodOptions.ALWAYS_EAT)) {

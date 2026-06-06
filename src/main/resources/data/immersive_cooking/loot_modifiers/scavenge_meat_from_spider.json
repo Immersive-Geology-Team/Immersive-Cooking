@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "minecraft:entity_properties",
-      "entity": "killer",
+      "entity": "attacker",
       "predicate": {
         "equipment": {
           "mainhand": {
@@ -24,9 +24,10 @@
     {
       "condition": "minecraft:entity_properties",
       "entity": "this",
-      "predicate": {
-        "type": "minecraft:spider"
-      }
+      "predicate": [
+        "minecraft:spider",
+        "minecraft:cave_spider"
+      ]
     },
     {
       "condition": "minecraft:random_chance_with_looting",

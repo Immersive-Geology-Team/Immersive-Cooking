@@ -16,6 +16,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
@@ -49,12 +50,12 @@ public class ModRenderHandler implements BlockColor, ItemColor {
     }
 
     @Override
-    public int getColor(BlockState blockState, @Nullable BlockAndTintGetter blockAndTintGetter, @Nullable BlockPos blockPos, int i) {
+    public int getColor(@NotNull BlockState blockState, @Nullable BlockAndTintGetter blockAndTintGetter, @Nullable BlockPos blockPos, int i) {
         return 0xffffff;
     }
 
     @Override
-    public int getColor(ItemStack itemStack, int i) {
+    public int getColor(@NotNull ItemStack itemStack, int i) {
         return 0xffffff;
     }
 

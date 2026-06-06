@@ -1,8 +1,8 @@
 package crimson_twilight.immersive_cooking.item.util;
 
+import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.item.ItemFood;
 import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
-import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -11,7 +11,6 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
-import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.function.Supplier;
@@ -135,7 +134,7 @@ public enum FoodStuff
         ALWAYS_EAT,
         BOWL_ITEM,
         BOTTLE_ITEM,
-        SHANK;
+        SHANK
     }
 
     public static class FoodOptionHolder

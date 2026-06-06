@@ -4,13 +4,9 @@ import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.block.BasicSlabBlock;
 import crimson_twilight.immersive_cooking.block.BlockContainerBase;
 import crimson_twilight.immersive_cooking.block.BlockCounterBase;
-import crimson_twilight.immersive_cooking.item.ItemGeneric;
 import crimson_twilight.immersive_cooking.regestry.BlockRegistry;
-import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
-import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -38,23 +34,12 @@ public class ModBlockModelProvider extends BlockStateProvider
         for (DeferredBlock<Block> object: BlockRegistry.BLOCK_MAP.values())
         {
             Block block = object.get();
-            if (block instanceof BlockContainerBase generic) {
-                generateCounterModel(generic);
-                continue;
-            }
-            if (block instanceof BlockCounterBase generic)
-            {
-                generateBasicCounterModel(generic);
-                continue;
-            }
-            if(block instanceof BasicSlabBlock slab)
-            {
-                generateBasicSlabModel(slab);
-                continue;
-            }
-            if (block instanceof Block)
-            {
-                getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(cubeAll(block)).build());
+            switch (block) {
+                case BlockContainerBase generic -> generateCounterModel(generic);
+                case BlockCounterBase generic -> generateBasicCounterModel(generic);
+                case BasicSlabBlock slab -> generateBasicSlabModel(slab);
+                case Block ignored ->
+                        getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(cubeAll(block)).build());
             }
         }
     }
@@ -71,7 +56,7 @@ public class ModBlockModelProvider extends BlockStateProvider
         ResourceLocation countermaterial_open_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/cabinet/open/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
         ResourceLocation countermaterial_bottom_tex = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/cabinet/bottom/" + block.getCounterMaterial().name().toLowerCase() + "_pantry");
 
-        ResourceLocation counter_model_name = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/"+block.getRegistryName());
+        ResourceLocation counter_model_name = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/" + block.getRegistryName());
         ResourceLocation counter_parent_name = ResourceLocation.fromNamespaceAndPath(ImmersiveCooking.MODID, "block/base_countertop");
 
         BlockModelBuilder cabinetModel;
@@ -104,7 +89,7 @@ public class ModBlockModelProvider extends BlockStateProvider
         }
         catch (Exception e)
         {
-            ImmersiveCooking.LOGGER.error("Attempting to register block: "+block.getRegistryName()+", but encountered "+e.getLocalizedMessage());
+            ImmersiveCooking.LOGGER.error("Attempting to register block: {}, but encountered {}", block.getRegistryName(), e.getLocalizedMessage());
         }
     }
     private void generateBasicCounterModel(BlockCounterBase block)
@@ -138,7 +123,7 @@ public class ModBlockModelProvider extends BlockStateProvider
         }
         catch (Exception e)
         {
-            ImmersiveCooking.LOGGER.error("Attempting to register block: "+block.getRegistryName()+", but encountered "+e.getLocalizedMessage());
+            ImmersiveCooking.LOGGER.error("Attempting to register block: {}, but encountered {}", block.getRegistryName(), e.getLocalizedMessage());
         }
     }
 

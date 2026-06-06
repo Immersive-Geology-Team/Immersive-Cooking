@@ -1,6 +1,5 @@
 package crimson_twilight.immersive_cooking.block;
 
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 
 public class BasicSlabBlock extends SlabBlock

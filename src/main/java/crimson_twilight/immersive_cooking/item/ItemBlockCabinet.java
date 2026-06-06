@@ -1,16 +1,12 @@
 package crimson_twilight.immersive_cooking.item;
 
 import crimson_twilight.immersive_cooking.block.helper.CabinetMaterial;
-import crimson_twilight.immersive_cooking.block.helper.CounterMaterial;
 import crimson_twilight.immersive_cooking.block.helper.CounterTop;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.jetbrains.annotations.NotNull;
 
 public class ItemBlockCabinet extends ItemBlockGeneric {
     private final CabinetMaterial body_material;
@@ -23,7 +19,7 @@ public class ItemBlockCabinet extends ItemBlockGeneric {
     }
 
     @Override
-    public Component getName(ItemStack ignored) {
+    public @NotNull Component getName(@NotNull ItemStack ignored) {
         MutableComponent top_lang = Component.translatable("material.immersive_cooking." + top_material.name().toLowerCase());
         MutableComponent body_lang = Component.translatable("material.immersive_cooking." + body_material.name().toLowerCase());
         return Component.translatable("block.immersive_cooking.cabinet", top_lang, body_lang);

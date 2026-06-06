@@ -3,17 +3,15 @@ package crimson_twilight.immersive_cooking.regestry;
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.item.ItemGeneric;
 import crimson_twilight.immersive_cooking.item.util.FoodStuff;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.HashMap;
 import java.util.function.Supplier;
 
-public class ItemRegistry
-{public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ImmersiveCooking.MODID);
+public class ItemRegistry {
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ImmersiveCooking.MODID);
 
     public static final HashMap<String, DeferredItem<Item>> ITEM_MAP = new HashMap<>();
 

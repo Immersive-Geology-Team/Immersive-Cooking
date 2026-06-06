@@ -8,13 +8,11 @@ import crimson_twilight.immersive_cooking.regestry.MenuTabRegistry;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.loading.FMLEnvironment;
-import net.neoforged.neoforge.common.NeoForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(ImmersiveCooking.MODID)
-public class ImmersiveCooking
-{
+public class ImmersiveCooking {
     public static final String MODID = "immersive_cooking";
     public static final Logger LOGGER = LogManager.getLogger();
 
@@ -29,9 +27,6 @@ public class ImmersiveCooking
 
         init();
         register(eventBus);
-
-        //THE END
-//        NeoForge.EVENT_BUS.register(this);
     }
 
     private void init()

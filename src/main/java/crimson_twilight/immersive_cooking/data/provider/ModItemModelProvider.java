@@ -1,9 +1,9 @@
 package crimson_twilight.immersive_cooking.data.provider;
 
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
+import crimson_twilight.immersive_cooking.block.helper.CabinetMaterial;
 import crimson_twilight.immersive_cooking.block.helper.CounterMaterial;
 import crimson_twilight.immersive_cooking.block.helper.CounterTop;
-import crimson_twilight.immersive_cooking.block.helper.CabinetMaterial;
 import crimson_twilight.immersive_cooking.item.ItemBlockCabinet;
 import crimson_twilight.immersive_cooking.item.ItemBlockCounter;
 import crimson_twilight.immersive_cooking.item.ItemBlockGeneric;
@@ -43,7 +43,7 @@ public class ModItemModelProvider extends ItemModelProvider
         }
         catch (Exception e)
         {
-            ImmersiveCooking.LOGGER.error("Attempting to register item: "+item.getRegistryName()+", but encountered "+e.getLocalizedMessage());
+            ImmersiveCooking.LOGGER.error("Attempting to register item: {}, but encountered {}", item.getRegistryName(), e.getLocalizedMessage());
         }
     }
 

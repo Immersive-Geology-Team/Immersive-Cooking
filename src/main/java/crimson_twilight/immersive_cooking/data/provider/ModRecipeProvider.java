@@ -16,6 +16,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
+import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
@@ -33,7 +34,7 @@ public class ModRecipeProvider extends net.minecraft.data.recipes.RecipeProvider
     }
 
     @Override
-    protected void buildRecipes(RecipeOutput output) {
+    protected void buildRecipes(@NotNull RecipeOutput output) {
         ImmersiveCooking.LOGGER.info("Starting Recipe Provider");
         registerCraftingRecipes(output);
         registerFarmersRecipes(output);
@@ -118,8 +119,8 @@ public class ModRecipeProvider extends net.minecraft.data.recipes.RecipeProvider
         }, Items.BOWL);
     }
 
-    private static List<CuttingRecipeRecord> cuttingRecipes = new ArrayList<>();
-    private static List<CookingPotRecord> potRecipes = new ArrayList<>();
+    private static final List<CuttingRecipeRecord> cuttingRecipes = new ArrayList<>();
+    private static final List<CookingPotRecord> potRecipes = new ArrayList<>();
 
     public record CuttingRecipeRecord(
             Ingredient cuttingTool,

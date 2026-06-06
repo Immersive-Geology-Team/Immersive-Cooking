@@ -8,7 +8,7 @@ import crimson_twilight.immersive_cooking.item.ItemBlockCabinet;
 import crimson_twilight.immersive_cooking.item.ItemBlockCounter;
 import crimson_twilight.immersive_cooking.item.ItemBlockGeneric;
 import crimson_twilight.immersive_cooking.item.ItemGeneric;
-import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
+import crimson_twilight.immersive_cooking.registry.ItemRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;

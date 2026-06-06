@@ -1,7 +1,7 @@
 package crimson_twilight.immersive_cooking.client;
 
 import crimson_twilight.immersive_cooking.block.BlockContainerBase;
-import crimson_twilight.immersive_cooking.regestry.BlockRegistry;
+import crimson_twilight.immersive_cooking.registry.BlockRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;

@@ -1,4 +1,4 @@
-package crimson_twilight.immersive_cooking.regestry;
+package crimson_twilight.immersive_cooking.registry;
 
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.item.ItemGeneric;

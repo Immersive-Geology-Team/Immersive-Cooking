@@ -2,9 +2,9 @@ package crimson_twilight.immersive_cooking;
 
 import crimson_twilight.immersive_cooking.event.ClientEventHandler;
 import crimson_twilight.immersive_cooking.event.CommonEventHandler;
-import crimson_twilight.immersive_cooking.regestry.BlockRegistry;
-import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
-import crimson_twilight.immersive_cooking.regestry.MenuTabRegistry;
+import crimson_twilight.immersive_cooking.registry.BlockRegistry;
+import crimson_twilight.immersive_cooking.registry.ItemRegistry;
+import crimson_twilight.immersive_cooking.registry.MenuTabRegistry;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.loading.FMLEnvironment;

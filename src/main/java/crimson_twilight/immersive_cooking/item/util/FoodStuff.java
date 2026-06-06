@@ -2,7 +2,7 @@ package crimson_twilight.immersive_cooking.item.util;
 
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.item.ItemFood;
-import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
+import crimson_twilight.immersive_cooking.registry.ItemRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;

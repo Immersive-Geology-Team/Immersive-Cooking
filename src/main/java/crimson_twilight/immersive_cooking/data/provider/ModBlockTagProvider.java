@@ -4,7 +4,7 @@ import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.block.BasicBlock;
 import crimson_twilight.immersive_cooking.block.BlockContainerBase;
 import crimson_twilight.immersive_cooking.block.BlockCounterBase;
-import crimson_twilight.immersive_cooking.regestry.BlockRegistry;
+import crimson_twilight.immersive_cooking.registry.BlockRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;

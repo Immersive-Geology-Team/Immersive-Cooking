@@ -1,4 +1,4 @@
-package crimson_twilight.immersive_cooking.regestry;
+package crimson_twilight.immersive_cooking.registry;
 
 import crimson_twilight.immersive_cooking.ImmersiveCooking;
 import crimson_twilight.immersive_cooking.block.BasicBlock;
@@ -24,8 +24,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.HashMap;
 import java.util.function.Supplier;
 
-import static crimson_twilight.immersive_cooking.regestry.ItemRegistry.ITEMS;
-import static crimson_twilight.immersive_cooking.regestry.ItemRegistry.ITEM_MAP;
+import static crimson_twilight.immersive_cooking.registry.ItemRegistry.ITEMS;
+import static crimson_twilight.immersive_cooking.registry.ItemRegistry.ITEM_MAP;
 
 public class BlockRegistry
 {

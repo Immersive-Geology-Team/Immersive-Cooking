@@ -24,15 +24,19 @@
     {
       "condition": "minecraft:entity_properties",
       "entity": "this",
-      "predicate": [
-        "minecraft:spider",
-        "minecraft:cave_spider"
-      ]
+      "predicate": {
+        "type": "minecraft:spider"
+      }
     },
     {
-      "condition": "minecraft:random_chance_with_looting",
-      "chance": 0.5,
-      "looting_multiplier": 0.15
+      "condition": "minecraft:random_chance_with_enchanted_bonus",
+      "enchantment": "minecraft:looting",
+      "enchanted_chance": {
+        "type": "linear",
+        "base": 0.65,
+        "per_level_above_first": 0.15
+      },
+      "unenchanted_chance": 0.5
     }
   ],
   "item": "immersive_cooking:raw_spider_shank"

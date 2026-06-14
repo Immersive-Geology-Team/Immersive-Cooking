@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "cooked_spider_cutlet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "immersive_cooking:raw_spider_cutlet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "immersive_cooking:cooked_spider_cutlet_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "cooked_spider_cutlet"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "immersive_cooking:cooked_spider_cutlet_from_smoking"
+    ]
+  }
+}

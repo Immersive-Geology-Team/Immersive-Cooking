@@ -1,6 +1,5 @@
 package crimson_twilight.immersive_cooking.item;
 
-import crimson_twilight.immersive_cooking.block.helper.CabinetMaterial;
 import crimson_twilight.immersive_cooking.block.helper.CounterMaterial;
 import crimson_twilight.immersive_cooking.block.helper.CounterTop;
 import net.minecraft.network.chat.Component;
@@ -8,7 +7,6 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class ItemBlockCounter extends ItemBlockGeneric {
     private final CounterTop top_material;

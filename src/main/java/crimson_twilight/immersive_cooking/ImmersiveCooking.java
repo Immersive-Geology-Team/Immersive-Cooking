@@ -2,36 +2,31 @@ package crimson_twilight.immersive_cooking;
 
 import crimson_twilight.immersive_cooking.event.ClientEventHandler;
 import crimson_twilight.immersive_cooking.event.CommonEventHandler;
-import crimson_twilight.immersive_cooking.regestry.BlockRegistry;
-import crimson_twilight.immersive_cooking.regestry.ItemRegistry;
-import crimson_twilight.immersive_cooking.regestry.MenuTabRegistry;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.loading.FMLEnvironment;
+import crimson_twilight.immersive_cooking.registry.BlockRegistry;
+import crimson_twilight.immersive_cooking.registry.ItemRegistry;
+import crimson_twilight.immersive_cooking.registry.MenuTabRegistry;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.loading.FMLEnvironment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(ImmersiveCooking.MODID)
-@Mod.EventBusSubscriber(modid = ImmersiveCooking.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ImmersiveCooking
-{
+public class ImmersiveCooking {
     public static final String MODID = "immersive_cooking";
     public static final Logger LOGGER = LogManager.getLogger();
 
-    public ImmersiveCooking()
+    // NeoForge automatically injects the Mod Event Bus directly into your constructor
+    public ImmersiveCooking(IEventBus eventBus)
     {
-        final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(CommonEventHandler::init);
+
         if (FMLEnvironment.dist.isClient()) {
             eventBus.addListener(ClientEventHandler::init);
         }
-        init();
-        register();
 
-        //THE END
-        MinecraftForge.EVENT_BUS.register(this);
+        init();
+        register(eventBus);
     }
 
     private void init()
@@ -40,13 +35,10 @@ public class ImmersiveCooking
         BlockRegistry.init();
     }
 
-
-
-    private void register()
+    private void register(IEventBus eventBus)
     {
-        final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        ItemRegistry.ITEMS.register(bus);
-        BlockRegistry.BLOCKS.register(bus);
-        MenuTabRegistry.TAB_REGISTER.register(bus);
+        ItemRegistry.ITEMS.register(eventBus);
+        BlockRegistry.BLOCKS.register(eventBus);
+        MenuTabRegistry.TAB_REGISTER.register(eventBus);
     }
 }

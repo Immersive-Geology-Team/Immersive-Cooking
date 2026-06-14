@@ -8,14 +8,15 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 public class ItemFood extends ItemGeneric
 {
     private final FoodStuff food;
-    public ItemFood(FoodStuff foodStuff)
-    {
+
+    public ItemFood(FoodStuff foodStuff) {
         super(foodStuff.getProp());
-        this.food=foodStuff;
+        this.food = foodStuff;
         this.hasCraftingRemainingItem();
     }
 
@@ -25,14 +26,14 @@ public class ItemFood extends ItemGeneric
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
+    public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, Level level, @NotNull LivingEntity consumer) {
         if (!level.isClientSide) {
             this.affectConsumer(stack, level, consumer);
         }
 
         ItemStack containerStack = stack.getCraftingRemainingItem();
 
-        if (stack.isEdible()) {
+        if (stack.getFoodProperties(consumer) != null) {
             super.finishUsingItem(stack, level, consumer);
         } else {
             Player player = consumer instanceof Player ? (Player) consumer : null;
@@ -50,7 +51,7 @@ public class ItemFood extends ItemGeneric
         if (stack.isEmpty()) {
             return containerStack;
         } else {
-            if (consumer instanceof Player player && !((Player) consumer).getAbilities().instabuild) {
+            if (consumer instanceof Player player && !player.getAbilities().instabuild) {
                 if (!player.getInventory().add(containerStack)) {
                     player.drop(containerStack, false);
                 }

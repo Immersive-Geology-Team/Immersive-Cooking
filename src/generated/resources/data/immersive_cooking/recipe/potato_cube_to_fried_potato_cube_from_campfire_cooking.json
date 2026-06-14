@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "immersive_cooking:potato_cubes"
+  },
+  "result": {
+    "count": 1,
+    "id": "immersive_cooking:fried_potato_cubes"
+  }
+}

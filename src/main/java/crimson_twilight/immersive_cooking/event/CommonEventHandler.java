@@ -1,6 +1,6 @@
 package crimson_twilight.immersive_cooking.event;
 
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
 public class CommonEventHandler
 {

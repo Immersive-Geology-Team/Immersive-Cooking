@@ -1,10 +1,7 @@
 package crimson_twilight.immersive_cooking.block;
 
-import crimson_twilight.immersive_cooking.block.helper.CounterTop;
 import crimson_twilight.immersive_cooking.block.helper.CabinetMaterial;
-import crimson_twilight.immersive_cooking.client.ModRenderHandler;
-import net.minecraft.world.flag.FeatureFlags;
-import net.minecraftforge.fml.loading.FMLEnvironment;
+import crimson_twilight.immersive_cooking.block.helper.CounterTop;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class BlockContainerBase extends CabinetBlock {

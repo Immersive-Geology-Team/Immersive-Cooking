@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:acacia_planks"
+    },
+    "T": {
+      "item": "minecraft:polished_diorite"
+    }
+  },
+  "pattern": [
+    "T",
+    "B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersive_cooking:diorite_acacia_counter"
+  }
+}

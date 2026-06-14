@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "immersive_cooking:clean_spider_shank"
+  },
+  "result": {
+    "count": 1,
+    "id": "immersive_cooking:smoked_spider_shank"
+  }
+}

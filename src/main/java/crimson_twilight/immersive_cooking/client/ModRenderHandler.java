@@ -1,7 +1,7 @@
 package crimson_twilight.immersive_cooking.client;
 
 import crimson_twilight.immersive_cooking.block.BlockContainerBase;
-import crimson_twilight.immersive_cooking.regestry.BlockRegistry;
+import crimson_twilight.immersive_cooking.registry.BlockRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
@@ -12,12 +12,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.RenderTypeGroup;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
@@ -33,7 +32,8 @@ public class ModRenderHandler implements BlockColor, ItemColor {
     public static final ModRenderHandler INSTANCE = new ModRenderHandler();
 
     public static void register(){
-        for(Block b : BlockRegistry.BLOCK_MAP.values().stream().map(RegistryObject::get).toList()){
+        for (DeferredBlock<Block> holder : BlockRegistry.BLOCK_MAP.values()) {
+            Block b = holder.get();
             if(b instanceof BlockContainerBase){
                 Minecraft.getInstance().getBlockColors().register(INSTANCE, b);
             }
@@ -50,12 +50,12 @@ public class ModRenderHandler implements BlockColor, ItemColor {
     }
 
     @Override
-    public int getColor(BlockState blockState, @Nullable BlockAndTintGetter blockAndTintGetter, @Nullable BlockPos blockPos, int i) {
+    public int getColor(@NotNull BlockState blockState, @Nullable BlockAndTintGetter blockAndTintGetter, @Nullable BlockPos blockPos, int i) {
         return 0xffffff;
     }
 
     @Override
-    public int getColor(ItemStack itemStack, int i) {
+    public int getColor(@NotNull ItemStack itemStack, int i) {
         return 0xffffff;
     }
 

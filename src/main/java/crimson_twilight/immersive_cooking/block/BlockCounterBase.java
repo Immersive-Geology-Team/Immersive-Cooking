@@ -1,9 +1,7 @@
 package crimson_twilight.immersive_cooking.block;
 
-import com.google.common.collect.ImmutableMap;
-import crimson_twilight.immersive_cooking.block.helper.CounterTop;
 import crimson_twilight.immersive_cooking.block.helper.CounterMaterial;
-import crimson_twilight.immersive_cooking.client.ModRenderHandler;
+import crimson_twilight.immersive_cooking.block.helper.CounterTop;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
@@ -12,12 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.Property;
-import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.fml.loading.FMLEnvironment;
-import vectorwing.farmersdelight.common.block.CabinetBlock;
-
-import java.util.function.Function;
+import org.jetbrains.annotations.NotNull;
 
 public class BlockCounterBase extends BasicBlock {
     private final CounterMaterial body_material;
@@ -29,12 +22,12 @@ public class BlockCounterBase extends BasicBlock {
         super(name, properties);
         this.body_material = material;
         this.top_material = top;
-        this.registerDefaultState((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH)));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     public CounterMaterial getCounterMaterial()
@@ -48,14 +41,14 @@ public class BlockCounterBase extends BasicBlock {
     }
 
     @Override
-    public BlockState rotate(BlockState state, Rotation rot) {
-        return (BlockState)state.setValue(FACING, rot.rotate((Direction)state.getValue(FACING)));
+    public @NotNull BlockState rotate(BlockState state, Rotation rot) {
+        return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(new Property[]{FACING});
+        builder.add(FACING);
     }
 
     static {

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "farmersdelight:warped_cabinet"
+    },
+    "T": {
+      "item": "minecraft:deepslate_tiles"
+    }
+  },
+  "pattern": [
+    "T",
+    "B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersive_cooking:deepslate_warped_cabinet"
+  }
+}

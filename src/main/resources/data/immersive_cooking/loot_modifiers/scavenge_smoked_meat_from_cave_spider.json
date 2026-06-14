@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "minecraft:entity_properties",
-      "entity": "killer",
+      "entity": "attacker",
       "predicate": {
         "equipment": {
           "mainhand": {
@@ -29,9 +29,14 @@
       }
     },
     {
-      "condition": "minecraft:random_chance_with_looting",
-      "chance": 0.2,
-      "looting_multiplier": 0.15
+      "condition": "minecraft:random_chance_with_enchanted_bonus",
+      "enchantment": "minecraft:looting",
+      "enchanted_chance": {
+        "type": "linear",
+        "base": 0.65,
+        "per_level_above_first": 0.15
+      },
+      "unenchanted_chance": 0.5
     }
   ],
   "item": "immersive_cooking:smoked_spider_shank"

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blackstone"
+    },
+    "C": {
+      "item": "minecraft:calcite"
+    }
+  },
+  "pattern": [
+    "BC",
+    "CB"
+  ],
+  "result": {
+    "count": 4,
+    "id": "immersive_cooking:checkered_tiles"
+  }
+}

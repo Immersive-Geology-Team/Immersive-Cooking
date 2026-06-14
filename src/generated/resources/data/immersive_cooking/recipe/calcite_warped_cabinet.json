@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "farmersdelight:warped_cabinet"
+    },
+    "T": {
+      "item": "minecraft:calcite"
+    }
+  },
+  "pattern": [
+    "T",
+    "B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "immersive_cooking:calcite_warped_cabinet"
+  }
+}
